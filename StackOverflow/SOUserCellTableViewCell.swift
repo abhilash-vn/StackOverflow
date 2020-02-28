@@ -9,6 +9,15 @@
 import UIKit
 
 class SOUserCellTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var userNameLabel: UILabel!
+    
+    @IBOutlet weak var reputationLabel: UILabel!
+     
+    @IBOutlet weak var followingLabel: UILabel!
+     
+    @IBOutlet weak var profileImageView: UIImageView!
+      
 
     override func awakeFromNib() {
         super.awakeFromNib()

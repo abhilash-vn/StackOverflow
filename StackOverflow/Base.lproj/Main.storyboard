@@ -38,7 +38,7 @@
                                 <rect key="frame" x="20" y="104" width="374" height="758"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SOTableViewCell" rowHeight="139" id="drN-58-nl7">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SOTableViewCell" rowHeight="139" id="drN-58-nl7" customClass="SOUserCellTableViewCell" customModule="StackOverflow" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="139"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="drN-58-nl7" id="Sph-WQ-kXk">
@@ -108,6 +108,11 @@
                                                 <constraint firstItem="LRy-tY-jKZ" firstAttribute="top" secondItem="Sph-WQ-kXk" secondAttribute="top" constant="4" id="yFr-qq-ua7"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="profileImageView" destination="nLC-fa-Ftl" id="Vhv-PF-RFy"/>
+                                            <outlet property="reputationLabel" destination="IXi-dq-SAj" id="l8e-pU-Vdq"/>
+                                            <outlet property="userNameLabel" destination="iko-Jo-hZs" id="XeB-0K-BwY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
