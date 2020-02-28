@@ -40,7 +40,7 @@ struct SOUsersModel: Decodable {
     
     let users: [SOUser]
     
-    enum SOUsersModelKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case users = "items"
     }
 }
@@ -51,10 +51,10 @@ struct SOUser: SOUserP, Decodable {
     let name: String
     let reputation: Int
 
-    enum SOUserKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case profileImage = "profile_image"
         case name = "display_name"
-        case reputation = "reputation"
+        case reputation
     }
 }
 
