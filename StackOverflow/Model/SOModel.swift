@@ -30,19 +30,28 @@ import Foundation
 //}
 
 
-protocol SOUser {
+protocol SOUserP {
     var profileImage: String { get }
     var name: String { get }
     var reputation: Int { get }
 }
 
-struct SOUserModel: SOUser, Decodable {
+struct SOUsersModel: Decodable {
+    
+    let users: [SOUser]
+    
+    enum SOUsersModelKeys: String, CodingKey {
+        case users = "items"
+    }
+}
+
+struct SOUser: SOUserP, Decodable {
 
     let profileImage: String
     let name: String
     let reputation: Int
 
-    enum SOUserModelKeys: String, CodingKey {
+    enum SOUserKeys: String, CodingKey {
         case profileImage = "profile_image"
         case name = "display_name"
         case reputation = "reputation"

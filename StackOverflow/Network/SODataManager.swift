@@ -27,7 +27,7 @@ protocol DataService {
 /// The real data maanager for the app. Will use network service to supply data.
 struct SODataManager: DataService {
     
-    typealias Model = [SOUserModel]
+    typealias Model = SOUsersModel
     
     private let networkManager: NetworkService
     

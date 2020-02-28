@@ -13,8 +13,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let nm = SONetworkManager()
+         let dm = SODataManager.init(networkManager: nm)
+         
+        dm.getData(successBlock: { (user) in
+            
+            print(user)
+            
+        }) { (error) in
+            print(error)
+        }
+        
     }
 
+    
+ 
 
     
 }

@@ -20,17 +20,19 @@ protocol DataParsingService {
 
 struct SODataParser: DataParsingService {
     
-    typealias Model = [SOUserModel]
+    typealias Model = SOUsersModel
     
-    func parseData(data: Data?) throws ->  [SOUserModel] {
+    func parseData(data: Data?) throws ->  SOUsersModel {
         
         guard let data = data else {
             throw SONetworkError.invalidData
         }
         
         do {
-            return try JSONDecoder().decode([SOUserModel].self, from: data)
-        } catch {
+            return try JSONDecoder().decode(SOUsersModel.self, from: data)
+        } catch let error {
+            
+            print("Error: \(error)")
             throw SONetworkError.decodingFailed
         }
         
