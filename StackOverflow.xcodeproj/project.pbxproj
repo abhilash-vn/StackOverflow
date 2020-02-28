@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A21136BF2409C050003C8315 /* SOCustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21136BE2409C050003C8315 /* SOCustomViews.swift */; };
+		A21136C32409D8AB003C8315 /* SOUserCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21136C22409D8AB003C8315 /* SOUserCellTableViewCell.swift */; };
 		A27A8D7524086BC10056F29F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A8D7424086BC10056F29F /* AppDelegate.swift */; };
 		A27A8D7724086BC10056F29F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A8D7624086BC10056F29F /* SceneDelegate.swift */; };
 		A27A8D7924086BC10056F29F /* SOTableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A8D7824086BC10056F29F /* SOTableListViewController.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		A21136BE2409C050003C8315 /* SOCustomViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOCustomViews.swift; sourceTree = "<group>"; };
+		A21136C22409D8AB003C8315 /* SOUserCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOUserCellTableViewCell.swift; sourceTree = "<group>"; };
 		A27A8D7124086BC10056F29F /* StackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A27A8D7424086BC10056F29F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A27A8D7624086BC10056F29F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				A27A8DB5240883F00056F29F /* Network */,
 				A27A8DA624086EF50056F29F /* Model */,
 				A27A8D7824086BC10056F29F /* SOTableListViewController.swift */,
+				A21136C22409D8AB003C8315 /* SOUserCellTableViewCell.swift */,
 				A21136BE2409C050003C8315 /* SOCustomViews.swift */,
 				A27A8D7A24086BC10056F29F /* Main.storyboard */,
 				A27A8D7D24086BC20056F29F /* Assets.xcassets */,
@@ -303,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21136C32409D8AB003C8315 /* SOUserCellTableViewCell.swift in Sources */,
 				A27A8DC124088AC10056F29F /* SODataParser.swift in Sources */,
 				A27A8DB92408841F0056F29F /* SONetworkManager.swift in Sources */,
 				A27A8D7924086BC10056F29F /* SOTableListViewController.swift in Sources */,

@@ -21,7 +21,7 @@ class SOTableListViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.dataSource = self
         
         let nm = SONetworkManager()
