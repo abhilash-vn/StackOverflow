@@ -8,29 +8,58 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class SOTableListViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var userData: [SOUser]? = nil
+    
+      let cellIdentifier = "SOTableViewCell"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        
+        tableView.dataSource = self
+        
         let nm = SONetworkManager()
-         let dm = SODataManager.init(networkManager: nm)
+        let dm = SODataManager.init(networkManager: nm)
          
-        dm.getData(successBlock: { (user) in
+        dm.getData(successBlock: { (users) in
             
-            print(user)
+            
+            self.userData = users
+            
+            DispatchQueue.main.async {
+                print(self.userData ?? "nothing")
+                self.tableView.reloadData()
+            }
+            
+
             
         }) { (error) in
             print(error)
         }
         
     }
+}
 
+extension SOTableListViewController: UITableViewDataSource, UITableViewDelegate {
     
- 
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.userData?.count ?? 0
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+            
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        cell.textLabel?.text = userData?[indexPath.row].name
+        return cell
+        
+    }
 }
 
 

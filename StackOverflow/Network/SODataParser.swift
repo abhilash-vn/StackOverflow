@@ -29,7 +29,7 @@ struct SODataParser: DataParsingService {
         }
         
         do {
-            let usersServiceData = try JSONDecoder().decode(SOUsersModel.self, from: data)
+            let usersServiceData = try JSONDecoder().decode(SOUsersModelService.self, from: data)
             return usersServiceData.users
         } catch let error {
             

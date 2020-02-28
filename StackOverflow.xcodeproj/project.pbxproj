@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A21136BF2409C050003C8315 /* SOCustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21136BE2409C050003C8315 /* SOCustomViews.swift */; };
 		A27A8D7524086BC10056F29F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A8D7424086BC10056F29F /* AppDelegate.swift */; };
 		A27A8D7724086BC10056F29F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A8D7624086BC10056F29F /* SceneDelegate.swift */; };
-		A27A8D7924086BC10056F29F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A8D7824086BC10056F29F /* ViewController.swift */; };
+		A27A8D7924086BC10056F29F /* SOTableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A8D7824086BC10056F29F /* SOTableListViewController.swift */; };
 		A27A8D7C24086BC10056F29F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A27A8D7A24086BC10056F29F /* Main.storyboard */; };
 		A27A8D7E24086BC20056F29F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A27A8D7D24086BC20056F29F /* Assets.xcassets */; };
 		A27A8D8124086BC20056F29F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A27A8D7F24086BC20056F29F /* LaunchScreen.storyboard */; };
@@ -43,10 +44,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A21136BE2409C050003C8315 /* SOCustomViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOCustomViews.swift; sourceTree = "<group>"; };
 		A27A8D7124086BC10056F29F /* StackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A27A8D7424086BC10056F29F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A27A8D7624086BC10056F29F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A27A8D7824086BC10056F29F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A27A8D7824086BC10056F29F /* SOTableListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOTableListViewController.swift; sourceTree = "<group>"; };
 		A27A8D7B24086BC10056F29F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A27A8D7D24086BC20056F29F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A27A8D8024086BC20056F29F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -116,12 +118,13 @@
 		A27A8D7324086BC10056F29F /* StackOverflow */ = {
 			isa = PBXGroup;
 			children = (
+				A27A8D7424086BC10056F29F /* AppDelegate.swift */,
+				A27A8D7624086BC10056F29F /* SceneDelegate.swift */,
 				A27A8DBA240884560056F29F /* Extension.swift */,
 				A27A8DB5240883F00056F29F /* Network */,
 				A27A8DA624086EF50056F29F /* Model */,
-				A27A8D7424086BC10056F29F /* AppDelegate.swift */,
-				A27A8D7624086BC10056F29F /* SceneDelegate.swift */,
-				A27A8D7824086BC10056F29F /* ViewController.swift */,
+				A27A8D7824086BC10056F29F /* SOTableListViewController.swift */,
+				A21136BE2409C050003C8315 /* SOCustomViews.swift */,
 				A27A8D7A24086BC10056F29F /* Main.storyboard */,
 				A27A8D7D24086BC20056F29F /* Assets.xcassets */,
 				A27A8D7F24086BC20056F29F /* LaunchScreen.storyboard */,
@@ -302,13 +305,14 @@
 			files = (
 				A27A8DC124088AC10056F29F /* SODataParser.swift in Sources */,
 				A27A8DB92408841F0056F29F /* SONetworkManager.swift in Sources */,
-				A27A8D7924086BC10056F29F /* ViewController.swift in Sources */,
+				A27A8D7924086BC10056F29F /* SOTableListViewController.swift in Sources */,
 				A27A8DBB240884560056F29F /* Extension.swift in Sources */,
 				A27A8DBD2408880F0056F29F /* SOErrorParser.swift in Sources */,
 				A27A8DB7240884180056F29F /* SODataManager.swift in Sources */,
 				A27A8D7524086BC10056F29F /* AppDelegate.swift in Sources */,
 				A27A8D7724086BC10056F29F /* SceneDelegate.swift in Sources */,
 				A27A8DA824086F130056F29F /* SOModel.swift in Sources */,
+				A21136BF2409C050003C8315 /* SOCustomViews.swift in Sources */,
 				A27A8DBF240888160056F29F /* SOResponseParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
