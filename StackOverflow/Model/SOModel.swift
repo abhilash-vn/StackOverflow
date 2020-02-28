@@ -30,22 +30,22 @@ import Foundation
 //}
 
 
-protocol SOUserP {
+protocol SOUser {
     var profileImage: String { get }
     var name: String { get }
     var reputation: Int { get }
 }
 
-struct SOUsersModel: Decodable {
+struct SOUsersModelService: Decodable {
     
-    let users: [SOUser]
+    let users: [SOUserModel]
     
     enum CodingKeys: String, CodingKey {
         case users = "items"
     }
 }
 
-struct SOUser: SOUserP, Decodable {
+struct SOUserModel: SOUser, Decodable {
 
     let profileImage: String
     let name: String
