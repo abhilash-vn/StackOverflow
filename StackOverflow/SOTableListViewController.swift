@@ -21,8 +21,11 @@ class SOTableListViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        tableView.rowHeight = UITableView.automaticDimension
+        
         tableView.dataSource = self
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 145
         
         let nm = SONetworkManager()
         let dm = SODataManager.init(networkManager: nm)
@@ -55,13 +58,18 @@ extension SOTableListViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? SOUserCellTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+            fatalError("The dequeued cell is not an instance of SOUserCellTableViewCell.")
         }
             
         cell.userNameLabel.text = userData?[indexPath.row].name
         return cell
         
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+    }
+    
 }
 
 
