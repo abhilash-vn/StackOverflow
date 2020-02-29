@@ -66,6 +66,15 @@ extension SOTableListViewController: UITableViewDataSource, UITableViewDelegate 
         
     }
     
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    if let cell = tableView.cellForRow(at: indexPath) as? SOUserCellTableViewCell {
+        
+        cell.toggleExpandedState()
+        
+        }
+        
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
