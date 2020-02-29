@@ -8,28 +8,6 @@
 
 import Foundation
 
-
-
-//protocol SOUser {
-//
-//    var profileImage: String { get }
-//    var name: String { get }
-//    var reputation: Int { get }
-//}
-//
-//struct SOUserModel: SOUser, Decodable {
-//
-//    let profileImage: String
-//    let name: String
-//    let reputation: Int
-//
-//    enum SOUserModelCodingKeys: String, CodingKeys {
-//        case profileImage = "profile_image"
-//    }
-//
-//}
-
-
 protocol SOUser {
     var profileImageURL: String { get }
     var name: String { get }

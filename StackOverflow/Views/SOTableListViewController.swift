@@ -93,9 +93,9 @@ extension SOTableListViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if let userData = userDatas?[indexPath.row] {
-            if userData.isInExpandedState { return 136 }
+            if userData.isInExpandedState { return 138 }
         }
-        return 82
+        return 84
     }
     
 }

@@ -11,6 +11,10 @@
 		A21136C32409D8AB003C8315 /* SOUserCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21136C22409D8AB003C8315 /* SOUserCellTableViewCell.swift */; };
 		A21136C5240A8259003C8315 /* SOUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21136C4240A8259003C8315 /* SOUserViewModel.swift */; };
 		A276DA5A240AFB3600A24763 /* SOConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276DA59240AFB3600A24763 /* SOConfiguration.swift */; };
+		A276DA5F240B004600A24763 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276DA5D240B004500A24763 /* Coordinator.swift */; };
+		A276DA60240B004600A24763 /* SOMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276DA5E240B004500A24763 /* SOMainCoordinator.swift */; };
+		A276DA64240B009800A24763 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276DA62240B009800A24763 /* Presenter.swift */; };
+		A276DA65240B009800A24763 /* SOUserListViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276DA63240B009800A24763 /* SOUserListViewPresenter.swift */; };
 		A27A8D7524086BC10056F29F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A8D7424086BC10056F29F /* AppDelegate.swift */; };
 		A27A8D7724086BC10056F29F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A8D7624086BC10056F29F /* SceneDelegate.swift */; };
 		A27A8D7924086BC10056F29F /* SOTableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A8D7824086BC10056F29F /* SOTableListViewController.swift */; };
@@ -51,6 +55,10 @@
 		A21136C22409D8AB003C8315 /* SOUserCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOUserCellTableViewCell.swift; sourceTree = "<group>"; };
 		A21136C4240A8259003C8315 /* SOUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOUserViewModel.swift; sourceTree = "<group>"; };
 		A276DA59240AFB3600A24763 /* SOConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOConfiguration.swift; sourceTree = "<group>"; };
+		A276DA5D240B004500A24763 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A276DA5E240B004500A24763 /* SOMainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOMainCoordinator.swift; sourceTree = "<group>"; };
+		A276DA62240B009800A24763 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		A276DA63240B009800A24763 /* SOUserListViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOUserListViewPresenter.swift; sourceTree = "<group>"; };
 		A27A8D7124086BC10056F29F /* StackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A27A8D7424086BC10056F29F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A27A8D7624086BC10056F29F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +118,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A276DA61240B004D00A24763 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A276DA5D240B004500A24763 /* Coordinator.swift */,
+				A276DA5E240B004500A24763 /* SOMainCoordinator.swift */,
+				A276DA62240B009800A24763 /* Presenter.swift */,
+				A276DA63240B009800A24763 /* SOUserListViewPresenter.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		A27A8D6824086BC10056F29F = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +157,7 @@
 				A27A8D7624086BC10056F29F /* SceneDelegate.swift */,
 				A27A8DBA240884560056F29F /* Extension.swift */,
 				A276DA59240AFB3600A24763 /* SOConfiguration.swift */,
+				A276DA61240B004D00A24763 /* Coordinator */,
 				A27A8DB5240883F00056F29F /* Network */,
 				A27A8DA624086EF50056F29F /* Model */,
 				A276DA58240AE67B00A24763 /* Views */,
@@ -322,12 +342,16 @@
 			files = (
 				A21136C32409D8AB003C8315 /* SOUserCellTableViewCell.swift in Sources */,
 				A27A8DC124088AC10056F29F /* SODataParser.swift in Sources */,
+				A276DA5F240B004600A24763 /* Coordinator.swift in Sources */,
+				A276DA64240B009800A24763 /* Presenter.swift in Sources */,
 				A27A8DB92408841F0056F29F /* SONetworkManager.swift in Sources */,
 				A27A8D7924086BC10056F29F /* SOTableListViewController.swift in Sources */,
+				A276DA65240B009800A24763 /* SOUserListViewPresenter.swift in Sources */,
 				A27A8DBB240884560056F29F /* Extension.swift in Sources */,
 				A27A8DBD2408880F0056F29F /* SOErrorParser.swift in Sources */,
 				A276DA5A240AFB3600A24763 /* SOConfiguration.swift in Sources */,
 				A27A8DB7240884180056F29F /* SODataManager.swift in Sources */,
+				A276DA60240B004600A24763 /* SOMainCoordinator.swift in Sources */,
 				A27A8D7524086BC10056F29F /* AppDelegate.swift in Sources */,
 				A27A8D7724086BC10056F29F /* SceneDelegate.swift in Sources */,
 				A27A8DA824086F130056F29F /* SOModel.swift in Sources */,
