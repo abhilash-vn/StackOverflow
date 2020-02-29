@@ -45,7 +45,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="398" height="138"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRy-tY-jKZ">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRy-tY-jKZ" userLabel="User Details View">
                                                     <rect key="frame" x="0.0" y="4" width="398" height="80"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iko-Jo-hZs">
@@ -90,13 +90,12 @@
                                                         <constraint firstItem="iko-Jo-hZs" firstAttribute="top" secondItem="LRy-tY-jKZ" secondAttribute="top" constant="8" id="sUJ-P7-iaJ"/>
                                                     </constraints>
                                                 </view>
-                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCc-fE-8Iz">
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCc-fE-8Iz" userLabel="Button View">
                                                     <rect key="frame" x="0.0" y="86" width="398" height="50"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4L-qd-JiL">
                                                             <rect key="frame" x="241.5" y="0.0" width="126.5" height="50"/>
                                                             <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <state key="normal" title="Follow"/>
                                                             <connections>
                                                                 <action selector="followButtonAction:" destination="drN-58-nl7" eventType="touchUpInside" id="lGD-q6-KxM"/>
                                                             </connections>
@@ -142,6 +141,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="buttonViewZeroHeightConstraint" destination="0Km-IO-pIC" id="qGd-Iw-Mgq"/>
+                                            <outlet property="followButton" destination="e4L-qd-JiL" id="DqC-bM-1dS"/>
                                             <outlet property="followingLabel" destination="Dzu-xD-yaO" id="9tJ-Ma-SpH"/>
                                             <outlet property="profileImageView" destination="nLC-fa-Ftl" id="Vhv-PF-RFy"/>
                                             <outlet property="reputationLabel" destination="IXi-dq-SAj" id="l8e-pU-Vdq"/>

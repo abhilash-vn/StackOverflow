@@ -83,12 +83,8 @@ extension SOTableListViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if let userData = userDatas?[indexPath.row] {
-          
-            print("Returning 140")
             if userData.isInExpandedState { return 138 }
         }
-        
-        print("Returning 90")
         return 80
     }
     

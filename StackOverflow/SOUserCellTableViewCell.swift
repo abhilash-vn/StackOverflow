@@ -8,44 +8,6 @@
 
 import UIKit
 
-protocol CachedImageView {
-    
-    func setImageFromUrl(_ imageURL :String)
-    func cacheImage(image: UIImage, for urlString: String)
-    
-}
-
-class UIImageViewCached: UIImageView, CachedImageView {
-    
-    private static var cachedImages = [String: UIImage]()
-    
-    func setImageFromUrl(_ imageURL :String) {
-        
-        if let image = UIImageViewCached.cachedImages[imageURL] {
-            self.image = image
-            return
-        }
-        
-        URLSession.shared.dataTask( with: NSURL(string:imageURL)! as URL, completionHandler: {
-            (data, response, error) -> Void in
-            
-            print("Fetched Image: \(imageURL)")
-            DispatchQueue.main.async {
-                if let data = data, let image = UIImage(data: data) {
-                    
-                    self.cacheImage(image: image, for: imageURL)
-                    self.image = image
-                }
-            }
-        }).resume()
-    }
-    
-    func cacheImage(image: UIImage, for urlString: String) {
-        
-        UIImageViewCached.cachedImages[urlString] = image
-    }
-    
-}
 
 class SOUserCellTableViewCell: UITableViewCell {
     
@@ -56,6 +18,8 @@ class SOUserCellTableViewCell: UITableViewCell {
     @IBOutlet weak var followingLabel: UILabel!
     
     @IBOutlet weak var profileImageView: UIImageViewCached!
+    
+    @IBOutlet weak var followButton: UIButton!
     
     @IBOutlet weak var buttonViewZeroHeightConstraint: NSLayoutConstraint!
     
@@ -72,7 +36,7 @@ class SOUserCellTableViewCell: UITableViewCell {
         
         userNameLabel.text = userData.name
         reputationLabel.text = String(userData.reputation)
-        followingLabel.text = userData.isFollowing ? "Following" : ""
+        setFollowingState()
         
         profileImageView?.setImageFromUrl(userData.profileImageURL)
         
@@ -80,11 +44,20 @@ class SOUserCellTableViewCell: UITableViewCell {
     
     @IBAction func blockButtonAction(_ sender: Any) {
         self.userData.isBlocked = true
+        
+        collapseCell()
     }
     
     @IBAction func followButtonAction(_ sender: Any) {
+        
         self.userData.isFollowing = !(self.userData.isFollowing)
+        setFollowingState()
+    }
+    
+    func setFollowingState() {
+        
         followingLabel.text = userData.isFollowing ? "Following" : ""
+        followButton.setTitle((userData.isFollowing ? "UnFollow" : "Follow"), for: .normal)
     }
     
     func toggleExpandedState() {
