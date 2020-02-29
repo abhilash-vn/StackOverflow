@@ -10,6 +10,8 @@ import UIKit
 
 class SOTableListViewController: UIViewController {
     
+    var actionDelegate: UserListViewInteractionProtocol!
+    
     @IBOutlet weak var tableView: UITableView!
     
     var userDatas: [SOUserViewData]? = nil
@@ -20,33 +22,25 @@ class SOTableListViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        tableView.dataSource = self
-        
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 140
         
-        let nm = SONetworkManager()
-        let dm = SODataManager.init(networkManager: nm)
+    }
+}
+
+extension SOTableListViewController: UserListView {
+    
+    func showUserList(users: [SOUserViewData]) {
         
-        dm.getData(successBlock: { (users) in
-            
-            
-            self.userDatas = users.map({ (user) -> SOUserViewModel in
-                SOUserViewModel(user: user)
-            })
-            
-            DispatchQueue.main.async {
-                print(self.userDatas ?? "nothing")
-                self.tableView.reloadData()
-            }
-            
-            
-            
-        }) { (error) in
-            print(error)
-        }
+        self.userDatas = users
+        self.tableView.reloadData()
         
     }
+    
+    func showError(errorTitle: String, errorMessage: String) {
+        print(errorMessage)
+    }
+    
 }
 
 extension SOTableListViewController: UITableViewDataSource, UITableViewDelegate {
@@ -99,8 +93,6 @@ extension SOTableListViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
 }
-
-
 
 
 /*

@@ -20,10 +20,12 @@ class SOUserListViewPresenter : UserListViewPresenter {
     
     func updateUsersList(users: [SOUserViewData]) {
         self.users = users
+        self.view?.showUserList(users: self.users!)
     }
     
     func showError(error: String) {
         print("Show Error")
+        self.view?.showError(errorTitle: <#T##String#>, errorMessage: <#T##String#>)
     }
     
 }
