@@ -31,7 +31,7 @@ import Foundation
 
 
 protocol SOUser {
-    var profileImage: String { get }
+    var profileImageURL: String { get }
     var name: String { get }
     var reputation: Int { get }
 }
@@ -47,12 +47,12 @@ struct SOUsersModelService: Decodable {
 
 struct SOUserModel: SOUser, Decodable {
 
-    let profileImage: String
+    let profileImageURL: String
     let name: String
     let reputation: Int
 
     enum CodingKeys: String, CodingKey {
-        case profileImage = "profile_image"
+        case profileImageURL = "profile_image"
         case name = "display_name"
         case reputation
     }

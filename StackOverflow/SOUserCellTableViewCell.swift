@@ -10,7 +10,7 @@ import UIKit
 
 protocol CachedImageView {
     
-    func setImageFromUrl(ImageURL :String)
+    func setImageFromUrl(_ imageURL :String)
     func cacheImage(image: UIImage, for urlString: String)
     
 }
@@ -19,21 +19,21 @@ class UIImageViewCached: UIImageView, CachedImageView {
     
     private static var cachedImages = [String: UIImage]()
     
-    func setImageFromUrl(ImageURL :String) {
+    func setImageFromUrl(_ imageURL :String) {
         
-        if let image = UIImageViewCached.cachedImages[ImageURL] {
+        if let image = UIImageViewCached.cachedImages[imageURL] {
             self.image = image
             return
         }
         
-        URLSession.shared.dataTask( with: NSURL(string:ImageURL)! as URL, completionHandler: {
+        URLSession.shared.dataTask( with: NSURL(string:imageURL)! as URL, completionHandler: {
             (data, response, error) -> Void in
             
-            print("Fetched Image: \(ImageURL)")
+            print("Fetched Image: \(imageURL)")
             DispatchQueue.main.async {
                 if let data = data, let image = UIImage(data: data) {
                     
-                    self.cacheImage(image: image, for: ImageURL)
+                    self.cacheImage(image: image, for: imageURL)
                     self.image = image
                 }
             }
@@ -74,12 +74,12 @@ class SOUserCellTableViewCell: UITableViewCell {
         reputationLabel.text = String(userData.reputation)
         followingLabel.text = userData.isFollowing ? "Following" : ""
         
-        profileImageView?.setImageFromUrl(ImageURL: userData.profileImage)
+        profileImageView?.setImageFromUrl(userData.profileImageURL)
         
     }
     
     @IBAction func blockButtonAction(_ sender: Any) {
-        self.userData?.isBlocked = true
+        self.userData.isBlocked = true
     }
     
     @IBAction func followButtonAction(_ sender: Any) {

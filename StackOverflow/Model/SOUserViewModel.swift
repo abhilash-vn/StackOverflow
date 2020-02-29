@@ -11,7 +11,7 @@ import Foundation
 
 protocol SOUserViewData {
     
-    var profileImage: String { get }
+    var profileImageURL: String { get }
     var name: String { get }
     var reputation: Int { get }
     var isFollowing: Bool { get set }
@@ -21,7 +21,7 @@ protocol SOUserViewData {
 
 class SOUserViewModel: SOUserViewData {
     
-    let profileImage: String
+    let profileImageURL: String
     let name: String
     let reputation: Int
     
@@ -42,7 +42,7 @@ class SOUserViewModel: SOUserViewData {
     }
     
     init(user: SOUser) {
-        profileImage = user.profileImage
+        profileImageURL = user.profileImageURL
         name = user.name
         reputation = user.reputation
     }
