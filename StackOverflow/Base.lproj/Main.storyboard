@@ -93,14 +93,14 @@
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCc-fE-8Iz" userLabel="Button View">
                                                     <rect key="frame" x="0.0" y="82" width="398" height="52"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4L-qd-JiL" customClass="BorderedButton" customModule="StackOverflow" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4L-qd-JiL" customClass="SOBorderedButton" customModule="StackOverflow" customModuleProvider="target">
                                                             <rect key="frame" x="241.5" y="0.0" width="126.5" height="50"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <connections>
                                                                 <action selector="followButtonAction:" destination="drN-58-nl7" eventType="touchUpInside" id="lGD-q6-KxM"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tn-tA-9h0" customClass="BorderedButton" customModule="StackOverflow" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tn-tA-9h0" customClass="SOBorderedButton" customModule="StackOverflow" customModuleProvider="target">
                                                             <rect key="frame" x="30" y="0.0" width="126.5" height="50"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <state key="normal" title="Block"/>
@@ -131,7 +131,7 @@
                                                 <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhh-o9-8Ri" userLabel="Disabled View">
                                                     <rect key="frame" x="0.0" y="0.0" width="398" height="138"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Cn-ue-pxd" customClass="BorderedButton" customModule="StackOverflow" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Cn-ue-pxd" customClass="SOBorderedButton" customModule="StackOverflow" customModuleProvider="target">
                                                             <rect key="frame" x="292" y="6" width="100" height="40"/>
                                                             <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>

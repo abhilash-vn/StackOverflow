@@ -37,7 +37,7 @@ struct SODataManager: DataService {
     
     func getData(successBlock: @escaping success, failedBlock: @escaping failure) {
         
-        let baseURLString = "https://api.stackexchange.com/2.2/users?pagesize=20&order=desc&sort=reputation&site=stackoverflow"
+        let baseURLString = SOConfiguration.baseURLString
         
         print("🅿️ URL created : \(baseURLString)")
             
