@@ -63,27 +63,31 @@ extension SOTableListViewController: UITableViewDataSource, UITableViewDelegate 
         
         if let userData = userDatas?[indexPath.row]  {
             cell.setupWith(user: userData)
-            cell.blockCompletion = {
+            cell.blockCompletion = { [weak self] in
                 
-                cell.toggleExpandedState()
-                tableView.beginUpdates()
-                tableView.endUpdates()
+                self?.toggleStateOfCell(cell: cell)
             }
         }
         return cell
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) as? SOUserCellTableViewCell {
-            
-            cell.toggleExpandedState()
-            
-            tableView.beginUpdates()
-            tableView.endUpdates()
-            
-            
+        
+        if let userData = userDatas?[indexPath.row] {
+            if userData.isBlocked { return }
         }
         
+        if let cell = tableView.cellForRow(at: indexPath) as? SOUserCellTableViewCell {
+            toggleStateOfCell(cell: cell)
+        }
+        
+    }
+    
+    private func toggleStateOfCell(cell: SOUserCellTableViewCell) {
+        
+        cell.toggleExpandedState()
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
