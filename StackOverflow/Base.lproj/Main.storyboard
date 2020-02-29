@@ -38,11 +38,11 @@
                                 <rect key="frame" x="8" y="104" width="398" height="758"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SOTableViewCell" rowHeight="140" id="drN-58-nl7" customClass="SOUserCellTableViewCell" customModule="StackOverflow" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="398" height="140"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SOTableViewCell" rowHeight="138" id="drN-58-nl7" customClass="SOUserCellTableViewCell" customModule="StackOverflow" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="398" height="138"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="drN-58-nl7" id="Sph-WQ-kXk">
-                                            <rect key="frame" x="0.0" y="0.0" width="398" height="140"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="138"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRy-tY-jKZ">
@@ -90,12 +90,32 @@
                                                         <constraint firstItem="iko-Jo-hZs" firstAttribute="top" secondItem="LRy-tY-jKZ" secondAttribute="top" constant="8" id="sUJ-P7-iaJ"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCc-fE-8Iz">
-                                                    <rect key="frame" x="0.0" y="88" width="398" height="50"/>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCc-fE-8Iz">
+                                                    <rect key="frame" x="0.0" y="86" width="398" height="50"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4L-qd-JiL">
+                                                            <rect key="frame" x="241.5" y="0.0" width="126.5" height="50"/>
+                                                            <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <state key="normal" title="Follow"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tn-tA-9h0">
+                                                            <rect key="frame" x="30" y="0.0" width="126.5" height="50"/>
+                                                            <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <state key="normal" title="Block"/>
+                                                        </button>
+                                                    </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" id="0Km-IO-pIC"/>
+                                                        <constraint firstItem="0tn-tA-9h0" firstAttribute="leading" secondItem="bCc-fE-8Iz" secondAttribute="leading" constant="30" id="3ye-NT-lTk"/>
+                                                        <constraint firstAttribute="bottom" secondItem="e4L-qd-JiL" secondAttribute="bottom" id="5Jj-hR-ET8"/>
+                                                        <constraint firstAttribute="trailing" secondItem="e4L-qd-JiL" secondAttribute="trailing" constant="30" id="Jy0-Qb-7fG"/>
+                                                        <constraint firstItem="e4L-qd-JiL" firstAttribute="width" secondItem="0tn-tA-9h0" secondAttribute="width" id="Vu2-zQ-vqB"/>
+                                                        <constraint firstItem="0tn-tA-9h0" firstAttribute="top" secondItem="bCc-fE-8Iz" secondAttribute="top" id="WFo-z9-UQi"/>
                                                         <constraint firstAttribute="height" priority="999" constant="50" id="Yx3-UK-J6O"/>
+                                                        <constraint firstAttribute="bottom" secondItem="0tn-tA-9h0" secondAttribute="bottom" id="ff2-FH-D4U"/>
+                                                        <constraint firstItem="e4L-qd-JiL" firstAttribute="top" secondItem="bCc-fE-8Iz" secondAttribute="top" id="sKa-pv-q6g"/>
+                                                        <constraint firstItem="e4L-qd-JiL" firstAttribute="leading" secondItem="0tn-tA-9h0" secondAttribute="trailing" constant="85" id="vZ8-PE-bFW"/>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -108,7 +128,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="bCc-fE-8Iz" secondAttribute="trailing" id="FAn-qV-KOq"/>
                                                 <constraint firstAttribute="trailing" secondItem="LRy-tY-jKZ" secondAttribute="trailing" id="Wiz-hr-kHc"/>
-                                                <constraint firstItem="bCc-fE-8Iz" firstAttribute="top" secondItem="LRy-tY-jKZ" secondAttribute="bottom" constant="4" id="cLW-yi-TW1"/>
+                                                <constraint firstItem="bCc-fE-8Iz" firstAttribute="top" secondItem="LRy-tY-jKZ" secondAttribute="bottom" constant="2" id="cLW-yi-TW1"/>
                                                 <constraint firstItem="LRy-tY-jKZ" firstAttribute="leading" secondItem="Sph-WQ-kXk" secondAttribute="leading" id="g1v-gS-f5U"/>
                                                 <constraint firstItem="bCc-fE-8Iz" firstAttribute="leading" secondItem="Sph-WQ-kXk" secondAttribute="leading" id="nlJ-pK-TDC"/>
                                                 <constraint firstItem="LRy-tY-jKZ" firstAttribute="top" secondItem="Sph-WQ-kXk" secondAttribute="top" constant="4" id="yFr-qq-ua7"/>
