@@ -12,35 +12,35 @@ class SOTableListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var userData: [SOUser]? = nil
+    var userDatas: [SOUserViewData]? = nil
     
-      let cellIdentifier = "SOTableViewCell"
-    
+    let cellIdentifier = "SOTableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
         tableView.dataSource = self
         
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 145
+        tableView.estimatedRowHeight = 140
         
         let nm = SONetworkManager()
         let dm = SODataManager.init(networkManager: nm)
-         
+        
         dm.getData(successBlock: { (users) in
             
             
-            self.userData = users
+            self.userDatas = users.map({ (user) -> SOUserViewModel in
+                SOUserViewModel(user: user)
+            })
             
             DispatchQueue.main.async {
-                print(self.userData ?? "nothing")
+                print(self.userDatas ?? "nothing")
                 self.tableView.reloadData()
             }
             
-
+            
             
         }) { (error) in
             print(error)
@@ -52,7 +52,7 @@ class SOTableListViewController: UIViewController {
 extension SOTableListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.userData?.count ?? 0
+        return self.userDatas?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,23 +60,36 @@ extension SOTableListViewController: UITableViewDataSource, UITableViewDelegate 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? SOUserCellTableViewCell  else {
             fatalError("The dequeued cell is not an instance of SOUserCellTableViewCell.")
         }
-            
-        cell.userNameLabel.text = userData?[indexPath.row].name
-        return cell
         
+        if let userData = userDatas?[indexPath.row]  {
+            cell.setupWith(user: userData)
+        }
+        return cell
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    if let cell = tableView.cellForRow(at: indexPath) as? SOUserCellTableViewCell {
-        
-        cell.toggleExpandedState()
-        
+        if let cell = tableView.cellForRow(at: indexPath) as? SOUserCellTableViewCell {
+            
+            cell.toggleExpandedState()
+            
+            tableView.beginUpdates()
+            tableView.endUpdates()
+            
+            
         }
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        
+        if let userData = userDatas?[indexPath.row] {
+          
+            print("Returning 140")
+            if userData.isInExpandedState { return 140 }
+        }
+        
+        print("Returning 90")
+        return 90
     }
     
 }
@@ -97,7 +110,7 @@ extension SOTableListViewController: UITableViewDataSource, UITableViewDelegate 
  Write in Swift
  No 3rd party frameworks - we want to see what you can do!
  Explain in a few words your design decisions you took developing the above app
-
+ 
  
  
  */

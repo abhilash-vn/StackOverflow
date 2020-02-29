@@ -33,14 +33,13 @@ class SOUserCellTableViewCell: UITableViewCell {
         
         userNameLabel.text = user.name
         reputationLabel.text = String(user.reputation)
-        
         followingLabel.text = user.isFollowing ? "Following" : ""
         
     }
     
     func toggleExpandedState() {
         
-        guard var validDataViewModel = userData, validDataViewModel.isBlocked else {
+        guard var validDataViewModel = userData, !validDataViewModel.isBlocked else {
             return
         }
         

@@ -19,7 +19,7 @@ protocol SOUserViewData {
     var isInExpandedState: Bool { get set }
 }
 
-struct SOUserViewModel: SOUserViewData {
+class SOUserViewModel: SOUserViewData {
     
     let profileImage: String
     let name: String
@@ -29,15 +29,15 @@ struct SOUserViewModel: SOUserViewData {
     var isBlocked: Bool = false
     var isInExpandedState: Bool = false
     
-    mutating func setFollowing(following: Bool) {
+    func setFollowing(following: Bool) {
         isFollowing = following
     }
     
-    mutating func setBlocked(blocked: Bool) {
+    func setBlocked(blocked: Bool) {
         isBlocked = blocked
     }
     
-    mutating func setisInExpandedState(state: Bool) {
+    func setisInExpandedState(state: Bool) {
         isInExpandedState = state
     }
     
@@ -45,6 +45,5 @@ struct SOUserViewModel: SOUserViewData {
         profileImage = user.profileImage
         name = user.name
         reputation = user.reputation
-        
     }
 }
