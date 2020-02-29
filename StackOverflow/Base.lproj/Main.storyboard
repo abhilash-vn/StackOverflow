@@ -128,14 +128,33 @@
                                                         </mask>
                                                     </variation>
                                                 </view>
+                                                <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhh-o9-8Ri" userLabel="Disabled View">
+                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="138"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Cn-ue-pxd">
+                                                            <rect key="frame" x="263" y="8" width="126.5" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <state key="normal" title="UNBLOCK"/>
+                                                            <connections>
+                                                                <action selector="unblockButtonAction:" destination="drN-58-nl7" eventType="touchUpInside" id="qcB-9q-yED"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="bhh-o9-8Ri" secondAttribute="trailing" id="7B4-fZ-JFg"/>
                                                 <constraint firstAttribute="trailing" secondItem="bCc-fE-8Iz" secondAttribute="trailing" id="FAn-qV-KOq"/>
                                                 <constraint firstAttribute="trailing" secondItem="LRy-tY-jKZ" secondAttribute="trailing" id="Wiz-hr-kHc"/>
+                                                <constraint firstAttribute="bottom" secondItem="bhh-o9-8Ri" secondAttribute="bottom" id="aIP-0I-mcK"/>
                                                 <constraint firstItem="bCc-fE-8Iz" firstAttribute="top" secondItem="LRy-tY-jKZ" secondAttribute="bottom" constant="2" id="cLW-yi-TW1"/>
                                                 <constraint firstItem="LRy-tY-jKZ" firstAttribute="leading" secondItem="Sph-WQ-kXk" secondAttribute="leading" id="g1v-gS-f5U"/>
+                                                <constraint firstItem="bhh-o9-8Ri" firstAttribute="top" secondItem="Sph-WQ-kXk" secondAttribute="top" id="gAf-Fu-VGw"/>
                                                 <constraint firstItem="bCc-fE-8Iz" firstAttribute="leading" secondItem="Sph-WQ-kXk" secondAttribute="leading" id="nlJ-pK-TDC"/>
+                                                <constraint firstItem="bhh-o9-8Ri" firstAttribute="leading" secondItem="Sph-WQ-kXk" secondAttribute="leading" id="o6M-XF-fxI"/>
                                                 <constraint firstItem="LRy-tY-jKZ" firstAttribute="top" secondItem="Sph-WQ-kXk" secondAttribute="top" constant="4" id="yFr-qq-ua7"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -143,6 +162,7 @@
                                             <outlet property="buttonViewZeroHeightConstraint" destination="0Km-IO-pIC" id="qGd-Iw-Mgq"/>
                                             <outlet property="followButton" destination="e4L-qd-JiL" id="DqC-bM-1dS"/>
                                             <outlet property="followingLabel" destination="Dzu-xD-yaO" id="9tJ-Ma-SpH"/>
+                                            <outlet property="greyedOutView" destination="bhh-o9-8Ri" id="gs5-ER-MBo"/>
                                             <outlet property="profileImageView" destination="nLC-fa-Ftl" id="Vhv-PF-RFy"/>
                                             <outlet property="reputationLabel" destination="IXi-dq-SAj" id="l8e-pU-Vdq"/>
                                             <outlet property="userNameLabel" destination="iko-Jo-hZs" id="XeB-0K-BwY"/>

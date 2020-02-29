@@ -15,14 +15,12 @@ class SOUserCellTableViewCell: UITableViewCell {
     var blockCompletion: blockButtonTappedBlock!
     
     @IBOutlet weak var userNameLabel: UILabel!
-    
     @IBOutlet weak var reputationLabel: UILabel!
-    
     @IBOutlet weak var followingLabel: UILabel!
-    
     @IBOutlet weak var profileImageView: UIImageViewCached!
     
     @IBOutlet weak var followButton: UIButton!
+    @IBOutlet weak var greyedOutView: UIView!
     
     @IBOutlet weak var buttonViewZeroHeightConstraint: NSLayoutConstraint!
     
@@ -42,12 +40,20 @@ class SOUserCellTableViewCell: UITableViewCell {
         setFollowingState()
         
         profileImageView?.setImageFromUrl(userData.profileImageURL)
+        greyedOutView.isHidden = !userData.isBlocked
         
     }
     
     @IBAction func blockButtonAction(_ sender: Any) {
-        self.userData.isBlocked = true
+        self.userData.isBlocked = !self.userData.isBlocked
+        greyedOutView.isHidden = false
         blockCompletion()
+    }
+    
+    @IBAction func unblockButtonAction(_ sender: Any) {
+        self.userData.isBlocked = !self.userData.isBlocked
+        greyedOutView.isHidden = true
+        
     }
     
     @IBAction func followButtonAction(_ sender: Any) {
