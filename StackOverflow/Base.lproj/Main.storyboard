@@ -94,15 +94,15 @@
                                                     <rect key="frame" x="0.0" y="82" width="398" height="52"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4L-qd-JiL" customClass="BorderedButton" customModule="StackOverflow" customModuleProvider="target">
-                                                            <rect key="frame" x="241.5" y="0.0" width="126.5" height="52"/>
-                                                            <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <rect key="frame" x="241.5" y="0.0" width="126.5" height="50"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <connections>
                                                                 <action selector="followButtonAction:" destination="drN-58-nl7" eventType="touchUpInside" id="lGD-q6-KxM"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tn-tA-9h0" customClass="BorderedButton" customModule="StackOverflow" customModuleProvider="target">
-                                                            <rect key="frame" x="30" y="0.0" width="126.5" height="52"/>
-                                                            <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <rect key="frame" x="30" y="0.0" width="126.5" height="50"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <state key="normal" title="Block"/>
                                                             <connections>
                                                                 <action selector="blockButtonAction:" destination="drN-58-nl7" eventType="touchUpInside" id="ysd-Gg-cde"/>
@@ -113,12 +113,12 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" id="0Km-IO-pIC"/>
                                                         <constraint firstItem="0tn-tA-9h0" firstAttribute="leading" secondItem="bCc-fE-8Iz" secondAttribute="leading" constant="30" id="3ye-NT-lTk"/>
-                                                        <constraint firstAttribute="bottom" secondItem="e4L-qd-JiL" secondAttribute="bottom" id="5Jj-hR-ET8"/>
+                                                        <constraint firstAttribute="bottom" secondItem="e4L-qd-JiL" secondAttribute="bottom" constant="2" id="5Jj-hR-ET8"/>
                                                         <constraint firstAttribute="trailing" secondItem="e4L-qd-JiL" secondAttribute="trailing" constant="30" id="Jy0-Qb-7fG"/>
                                                         <constraint firstItem="e4L-qd-JiL" firstAttribute="width" secondItem="0tn-tA-9h0" secondAttribute="width" id="Vu2-zQ-vqB"/>
                                                         <constraint firstItem="0tn-tA-9h0" firstAttribute="top" secondItem="bCc-fE-8Iz" secondAttribute="top" id="WFo-z9-UQi"/>
                                                         <constraint firstAttribute="height" priority="999" constant="52" id="Yx3-UK-J6O"/>
-                                                        <constraint firstAttribute="bottom" secondItem="0tn-tA-9h0" secondAttribute="bottom" id="ff2-FH-D4U"/>
+                                                        <constraint firstAttribute="bottom" secondItem="0tn-tA-9h0" secondAttribute="bottom" constant="2" id="ff2-FH-D4U"/>
                                                         <constraint firstItem="e4L-qd-JiL" firstAttribute="top" secondItem="bCc-fE-8Iz" secondAttribute="top" id="sKa-pv-q6g"/>
                                                         <constraint firstItem="e4L-qd-JiL" firstAttribute="leading" secondItem="0tn-tA-9h0" secondAttribute="trailing" constant="85" id="vZ8-PE-bFW"/>
                                                     </constraints>
