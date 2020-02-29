@@ -8,32 +8,73 @@
 
 import UIKit
 
+protocol CachedImageView {
+    
+    func setImageFromUrl(ImageURL :String)
+    func cacheImage(image: UIImage, for urlString: String)
+    
+}
+
+class UIImageViewCached: UIImageView, CachedImageView {
+    
+    private static var cachedImages = [String: UIImage]()
+    
+    func setImageFromUrl(ImageURL :String) {
+        
+        if let image = UIImageViewCached.cachedImages[ImageURL] {
+            self.image = image
+            return
+        }
+        
+        URLSession.shared.dataTask( with: NSURL(string:ImageURL)! as URL, completionHandler: {
+            (data, response, error) -> Void in
+            
+            print("Fetched Image: \(ImageURL)")
+            DispatchQueue.main.async {
+                if let data = data, let image = UIImage(data: data) {
+                    
+                    self.cacheImage(image: image, for: ImageURL)
+                    self.image = image
+                }
+            }
+        }).resume()
+    }
+    
+    func cacheImage(image: UIImage, for urlString: String) {
+        
+        UIImageViewCached.cachedImages[urlString] = image
+    }
+    
+}
+
 class SOUserCellTableViewCell: UITableViewCell {
     
     @IBOutlet weak var userNameLabel: UILabel!
     
     @IBOutlet weak var reputationLabel: UILabel!
-     
+    
     @IBOutlet weak var followingLabel: UILabel!
-     
-    @IBOutlet weak var profileImageView: UIImageView!
+    
+    @IBOutlet weak var profileImageView: UIImageViewCached!
     
     @IBOutlet weak var buttonViewZeroHeightConstraint: NSLayoutConstraint!
-      
+    
     private var userData: SOUserViewData!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     func setupWith(user: SOUserViewData) {
         
-        self.userData = user
+        userData = user
         
-        userNameLabel.text = user.name
-        reputationLabel.text = String(user.reputation)
-        followingLabel.text = user.isFollowing ? "Following" : ""
+        userNameLabel.text = userData.name
+        reputationLabel.text = String(userData.reputation)
+        followingLabel.text = userData.isFollowing ? "Following" : ""
+        
+        profileImageView?.setImageFromUrl(ImageURL: userData.profileImage)
         
     }
     
@@ -43,8 +84,9 @@ class SOUserCellTableViewCell: UITableViewCell {
     
     @IBAction func followButtonAction(_ sender: Any) {
         self.userData.isFollowing = !(self.userData.isFollowing)
+        followingLabel.text = userData.isFollowing ? "Following" : ""
     }
-
+    
     func toggleExpandedState() {
         
         guard var validDataViewModel = userData, !validDataViewModel.isBlocked else {
@@ -53,7 +95,7 @@ class SOUserCellTableViewCell: UITableViewCell {
         
         validDataViewModel.isInExpandedState = !validDataViewModel.isInExpandedState
         validDataViewModel.isInExpandedState ? expandCell() : collapseCell()
-         
+        
     }
     
     func expandCell() {
@@ -66,8 +108,8 @@ class SOUserCellTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }
