@@ -25,21 +25,21 @@ import UIKit
 //    }
 //}
 //
-//class BorderedButton: UIButton {
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//        layer.borderWidth = 1.0
-//        layer.borderColor = UIColor.systemGray.cgColor
-//        layer.cornerRadius = 5.0
-//        
-//        layer.shadowColor = UIColor.systemGray.cgColor
-//        layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
-//        layer.shadowRadius = 8
-//        layer.shadowOpacity = 0.5
-//        
-//    }
-//}
+class BorderedButton: UIButton {
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        layer.borderWidth = 1.0
+        layer.borderColor = UIColor.systemGray.cgColor
+        layer.cornerRadius = 5.0
+        
+        layer.shadowColor = UIColor.systemGray.cgColor
+        layer.shadowOffset = CGSize(width: 0.0, height: 6.0)
+        layer.shadowRadius = 8
+        layer.shadowOpacity = 0.5
+        
+    }
+}
 
 class SOShadowedUIView: UIView {
     required init?(coder aDecoder: NSCoder) {

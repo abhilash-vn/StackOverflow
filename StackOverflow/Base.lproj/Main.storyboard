@@ -46,7 +46,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRy-tY-jKZ" userLabel="User Details View">
-                                                    <rect key="frame" x="0.0" y="4" width="398" height="80"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="80"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iko-Jo-hZs">
                                                             <rect key="frame" x="88" y="8" width="309" height="20.5"/>
@@ -74,7 +74,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="Dzu-xD-yaO" secondAttribute="bottom" constant="8" id="0gQ-fd-K3w"/>
                                                         <constraint firstItem="IXi-dq-SAj" firstAttribute="width" secondItem="Dzu-xD-yaO" secondAttribute="width" multiplier="1.1145" id="2pQ-pG-YEd"/>
@@ -91,17 +91,17 @@
                                                     </constraints>
                                                 </view>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCc-fE-8Iz" userLabel="Button View">
-                                                    <rect key="frame" x="0.0" y="86" width="398" height="50"/>
+                                                    <rect key="frame" x="0.0" y="82" width="398" height="52"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4L-qd-JiL">
-                                                            <rect key="frame" x="241.5" y="0.0" width="126.5" height="50"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4L-qd-JiL" customClass="BorderedButton" customModule="StackOverflow" customModuleProvider="target">
+                                                            <rect key="frame" x="241.5" y="0.0" width="126.5" height="52"/>
                                                             <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <connections>
                                                                 <action selector="followButtonAction:" destination="drN-58-nl7" eventType="touchUpInside" id="lGD-q6-KxM"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tn-tA-9h0">
-                                                            <rect key="frame" x="30" y="0.0" width="126.5" height="50"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tn-tA-9h0" customClass="BorderedButton" customModule="StackOverflow" customModuleProvider="target">
+                                                            <rect key="frame" x="30" y="0.0" width="126.5" height="52"/>
                                                             <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" title="Block"/>
                                                             <connections>
@@ -109,7 +109,7 @@
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" id="0Km-IO-pIC"/>
                                                         <constraint firstItem="0tn-tA-9h0" firstAttribute="leading" secondItem="bCc-fE-8Iz" secondAttribute="leading" constant="30" id="3ye-NT-lTk"/>
@@ -117,7 +117,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="e4L-qd-JiL" secondAttribute="trailing" constant="30" id="Jy0-Qb-7fG"/>
                                                         <constraint firstItem="e4L-qd-JiL" firstAttribute="width" secondItem="0tn-tA-9h0" secondAttribute="width" id="Vu2-zQ-vqB"/>
                                                         <constraint firstItem="0tn-tA-9h0" firstAttribute="top" secondItem="bCc-fE-8Iz" secondAttribute="top" id="WFo-z9-UQi"/>
-                                                        <constraint firstAttribute="height" priority="999" constant="50" id="Yx3-UK-J6O"/>
+                                                        <constraint firstAttribute="height" priority="999" constant="52" id="Yx3-UK-J6O"/>
                                                         <constraint firstAttribute="bottom" secondItem="0tn-tA-9h0" secondAttribute="bottom" id="ff2-FH-D4U"/>
                                                         <constraint firstItem="e4L-qd-JiL" firstAttribute="top" secondItem="bCc-fE-8Iz" secondAttribute="top" id="sKa-pv-q6g"/>
                                                         <constraint firstItem="e4L-qd-JiL" firstAttribute="leading" secondItem="0tn-tA-9h0" secondAttribute="trailing" constant="85" id="vZ8-PE-bFW"/>
@@ -131,10 +131,13 @@
                                                 <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhh-o9-8Ri" userLabel="Disabled View">
                                                     <rect key="frame" x="0.0" y="0.0" width="398" height="138"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Cn-ue-pxd">
-                                                            <rect key="frame" x="263" y="8" width="126.5" height="50"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Cn-ue-pxd" customClass="BorderedButton" customModule="StackOverflow" customModuleProvider="target">
+                                                            <rect key="frame" x="292" y="6" width="100" height="40"/>
                                                             <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="EOR-cb-KQT"/>
+                                                                <constraint firstAttribute="width" constant="100" id="clO-Hg-Thn"/>
+                                                            </constraints>
                                                             <state key="normal" title="UNBLOCK"/>
                                                             <connections>
                                                                 <action selector="unblockButtonAction:" destination="drN-58-nl7" eventType="touchUpInside" id="qcB-9q-yED"/>
@@ -142,9 +145,12 @@
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="7Cn-ue-pxd" firstAttribute="top" secondItem="bhh-o9-8Ri" secondAttribute="top" constant="6" id="qJd-3R-CZr"/>
+                                                        <constraint firstAttribute="trailing" secondItem="7Cn-ue-pxd" secondAttribute="trailing" constant="6" id="y6O-uN-3ke"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="bhh-o9-8Ri" secondAttribute="trailing" id="7B4-fZ-JFg"/>
                                                 <constraint firstAttribute="trailing" secondItem="bCc-fE-8Iz" secondAttribute="trailing" id="FAn-qV-KOq"/>
@@ -155,7 +161,7 @@
                                                 <constraint firstItem="bhh-o9-8Ri" firstAttribute="top" secondItem="Sph-WQ-kXk" secondAttribute="top" id="gAf-Fu-VGw"/>
                                                 <constraint firstItem="bCc-fE-8Iz" firstAttribute="leading" secondItem="Sph-WQ-kXk" secondAttribute="leading" id="nlJ-pK-TDC"/>
                                                 <constraint firstItem="bhh-o9-8Ri" firstAttribute="leading" secondItem="Sph-WQ-kXk" secondAttribute="leading" id="o6M-XF-fxI"/>
-                                                <constraint firstItem="LRy-tY-jKZ" firstAttribute="top" secondItem="Sph-WQ-kXk" secondAttribute="top" constant="4" id="yFr-qq-ua7"/>
+                                                <constraint firstItem="LRy-tY-jKZ" firstAttribute="top" secondItem="Sph-WQ-kXk" secondAttribute="top" id="yFr-qq-ua7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
