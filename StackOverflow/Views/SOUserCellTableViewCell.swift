@@ -44,6 +44,17 @@ class SOUserCellTableViewCell: UITableViewCell {
         
     }
     
+    func toggleExpandedState() {
+        
+        guard var validDataViewModel = userData else {
+            return
+        }
+        
+        validDataViewModel.isInExpandedState = !validDataViewModel.isInExpandedState
+        validDataViewModel.isInExpandedState ? expandCell() : collapseCell()
+        
+    }
+    
     @IBAction func blockButtonAction(_ sender: Any) {
         self.userData.isBlocked = !self.userData.isBlocked
         greyedOutView.isHidden = false
@@ -61,23 +72,16 @@ class SOUserCellTableViewCell: UITableViewCell {
         self.userData.isFollowing = !(self.userData.isFollowing)
         setFollowingState()
     }
-    
-    func setFollowingState() {
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
         
-        followingLabel.text = userData.isFollowing ? "Following" : ""
-        followButton.setTitle((userData.isFollowing ? "UnFollow" : "Follow"), for: .normal)
+        // Configure the view for the selected state
     }
     
-    func toggleExpandedState() {
-        
-        guard var validDataViewModel = userData else {
-            return
-        }
-        
-        validDataViewModel.isInExpandedState = !validDataViewModel.isInExpandedState
-        validDataViewModel.isInExpandedState ? expandCell() : collapseCell()
-        
-    }
+}
+
+private extension SOUserCellTableViewCell {
     
     func expandCell() {
         buttonViewZeroHeightConstraint.isActive = false
@@ -87,10 +91,9 @@ class SOUserCellTableViewCell: UITableViewCell {
         buttonViewZeroHeightConstraint.isActive = true
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    func setFollowingState() {
         
-        // Configure the view for the selected state
+        followingLabel.text = userData.isFollowing ? "Following" : ""
+        followButton.setTitle((userData.isFollowing ? "UnFollow" : "Follow"), for: .normal)
     }
-    
 }
