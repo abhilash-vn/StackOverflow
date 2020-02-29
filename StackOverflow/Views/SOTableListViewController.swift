@@ -63,6 +63,12 @@ extension SOTableListViewController: UITableViewDataSource, UITableViewDelegate 
         
         if let userData = userDatas?[indexPath.row]  {
             cell.setupWith(user: userData)
+            cell.blockCompletion = {
+                
+                cell.toggleExpandedState()
+                tableView.beginUpdates()
+                tableView.endUpdates()
+            }
         }
         return cell
     }

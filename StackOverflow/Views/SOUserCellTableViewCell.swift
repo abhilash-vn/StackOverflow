@@ -8,8 +8,11 @@
 
 import UIKit
 
+typealias blockButtonTappedBlock = () -> Void
 
 class SOUserCellTableViewCell: UITableViewCell {
+    
+    var blockCompletion: blockButtonTappedBlock!
     
     @IBOutlet weak var userNameLabel: UILabel!
     
@@ -44,8 +47,7 @@ class SOUserCellTableViewCell: UITableViewCell {
     
     @IBAction func blockButtonAction(_ sender: Any) {
         self.userData.isBlocked = true
-        
-        collapseCell()
+        blockCompletion()
     }
     
     @IBAction func followButtonAction(_ sender: Any) {
@@ -62,7 +64,7 @@ class SOUserCellTableViewCell: UITableViewCell {
     
     func toggleExpandedState() {
         
-        guard var validDataViewModel = userData, !validDataViewModel.isBlocked else {
+        guard var validDataViewModel = userData else {
             return
         }
         

@@ -98,6 +98,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A276DA58240AE67B00A24763 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A27A8D7824086BC10056F29F /* SOTableListViewController.swift */,
+				A21136C22409D8AB003C8315 /* SOUserCellTableViewCell.swift */,
+				A21136BE2409C050003C8315 /* SOCustomViews.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A27A8D6824086BC10056F29F = {
 			isa = PBXGroup;
 			children = (
@@ -127,9 +137,7 @@
 				A27A8DBA240884560056F29F /* Extension.swift */,
 				A27A8DB5240883F00056F29F /* Network */,
 				A27A8DA624086EF50056F29F /* Model */,
-				A27A8D7824086BC10056F29F /* SOTableListViewController.swift */,
-				A21136C22409D8AB003C8315 /* SOUserCellTableViewCell.swift */,
-				A21136BE2409C050003C8315 /* SOCustomViews.swift */,
+				A276DA58240AE67B00A24763 /* Views */,
 				A27A8D7A24086BC10056F29F /* Main.storyboard */,
 				A27A8D7D24086BC20056F29F /* Assets.xcassets */,
 				A27A8D7F24086BC20056F29F /* LaunchScreen.storyboard */,
