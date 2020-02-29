@@ -97,11 +97,17 @@
                                                             <rect key="frame" x="241.5" y="0.0" width="126.5" height="50"/>
                                                             <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" title="Follow"/>
+                                                            <connections>
+                                                                <action selector="followButtonAction:" destination="drN-58-nl7" eventType="touchUpInside" id="lGD-q6-KxM"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tn-tA-9h0">
                                                             <rect key="frame" x="30" y="0.0" width="126.5" height="50"/>
                                                             <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" title="Block"/>
+                                                            <connections>
+                                                                <action selector="blockButtonAction:" destination="drN-58-nl7" eventType="touchUpInside" id="ysd-Gg-cde"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

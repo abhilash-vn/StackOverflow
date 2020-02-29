@@ -20,7 +20,7 @@ class SOUserCellTableViewCell: UITableViewCell {
     
     @IBOutlet weak var buttonViewZeroHeightConstraint: NSLayoutConstraint!
       
-    private var userData: SOUserViewData?
+    private var userData: SOUserViewData!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,6 +37,14 @@ class SOUserCellTableViewCell: UITableViewCell {
         
     }
     
+    @IBAction func blockButtonAction(_ sender: Any) {
+        self.userData?.isBlocked = true
+    }
+    
+    @IBAction func followButtonAction(_ sender: Any) {
+        self.userData.isFollowing = !(self.userData.isFollowing)
+    }
+
     func toggleExpandedState() {
         
         guard var validDataViewModel = userData, !validDataViewModel.isBlocked else {
@@ -46,9 +54,6 @@ class SOUserCellTableViewCell: UITableViewCell {
         validDataViewModel.isInExpandedState = !validDataViewModel.isInExpandedState
         validDataViewModel.isInExpandedState ? expandCell() : collapseCell()
          
-        
-        
-        
     }
     
     func expandCell() {
