@@ -42,7 +42,7 @@
 		A2952DBF240C3A2600C15B6E /* SODataParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DBE240C3A2600C15B6E /* SODataParserTests.swift */; };
 		A2952DC2240C41D700C15B6E /* SODisplayableErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DC1240C41D700C15B6E /* SODisplayableErrorTests.swift */; };
 		A2952DC4240C447C00C15B6E /* SOUserListViewPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DC3240C447C00C15B6E /* SOUserListViewPresenterTests.swift */; };
-		A2952DC7240C56AF00C15B6E /* SOCorrdinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DC6240C56AF00C15B6E /* SOCorrdinatorTests.swift */; };
+		A2952DC7240C56AF00C15B6E /* SOCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DC6240C56AF00C15B6E /* SOCoordinatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,7 +104,7 @@
 		A2952DBE240C3A2600C15B6E /* SODataParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SODataParserTests.swift; sourceTree = "<group>"; };
 		A2952DC1240C41D700C15B6E /* SODisplayableErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SODisplayableErrorTests.swift; sourceTree = "<group>"; };
 		A2952DC3240C447C00C15B6E /* SOUserListViewPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOUserListViewPresenterTests.swift; sourceTree = "<group>"; };
-		A2952DC6240C56AF00C15B6E /* SOCorrdinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOCorrdinatorTests.swift; sourceTree = "<group>"; };
+		A2952DC6240C56AF00C15B6E /* SOCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOCoordinatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,7 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				A27A8D8B24086BC20056F29F /* StackOverflowTests.swift */,
-				A2952DC6240C56AF00C15B6E /* SOCorrdinatorTests.swift */,
+				A2952DC6240C56AF00C15B6E /* SOCoordinatorTests.swift */,
 				A2952DC5240C565D00C15B6E /* ModelTests */,
 				A2952DC0240C41BA00C15B6E /* ViewTests */,
 				A2952DB9240C2AE800C15B6E /* NetworkTests */,
@@ -461,7 +461,7 @@
 				A27A8D8C24086BC20056F29F /* StackOverflowTests.swift in Sources */,
 				A2952DBB240C2E7000C15B6E /* SOErrorParserTests.swift in Sources */,
 				A2952DBF240C3A2600C15B6E /* SODataParserTests.swift in Sources */,
-				A2952DC7240C56AF00C15B6E /* SOCorrdinatorTests.swift in Sources */,
+				A2952DC7240C56AF00C15B6E /* SOCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

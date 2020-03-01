@@ -39,7 +39,7 @@ class SOMockDataManager: DataService {
     }
 }
 
-class SOCorrdinatorTests: XCTestCase {
+class SOCoordinatorTests: XCTestCase {
     
     var mainvc: SOTableListViewController!
       
