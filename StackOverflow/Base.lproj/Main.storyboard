@@ -38,7 +38,7 @@
                                 <rect key="frame" x="8" y="104" width="398" height="758"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SOTableViewCell" rowHeight="138" id="drN-58-nl7" customClass="SOUserCellTableViewCell" customModule="StackOverflow" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SOTableViewCell" rowHeight="138" id="drN-58-nl7" customClass="SOUserCellTableViewCell" customModule="StackOverflow" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="398" height="138"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="drN-58-nl7" id="Sph-WQ-kXk">
@@ -91,7 +91,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCc-fE-8Iz" userLabel="Button View">
-                                                    <rect key="frame" x="0.0" y="82" width="398" height="52"/>
+                                                    <rect key="frame" x="0.0" y="84" width="398" height="52"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4L-qd-JiL" customClass="SOBorderedButton" customModule="StackOverflow" customModuleProvider="target">
                                                             <rect key="frame" x="241.5" y="0.0" width="126.5" height="50"/>
@@ -134,7 +134,7 @@
                                                     </variation>
                                                 </view>
                                                 <view hidden="YES" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhh-o9-8Ri" userLabel="Disabled View">
-                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="138"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="398" height="134"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Cn-ue-pxd" customClass="SOBorderedButton" customModule="StackOverflow" customModuleProvider="target">
                                                             <rect key="frame" x="292" y="6" width="100" height="40"/>
@@ -161,8 +161,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="bhh-o9-8Ri" secondAttribute="trailing" id="7B4-fZ-JFg"/>
                                                 <constraint firstAttribute="trailing" secondItem="bCc-fE-8Iz" secondAttribute="trailing" id="FAn-qV-KOq"/>
                                                 <constraint firstAttribute="trailing" secondItem="LRy-tY-jKZ" secondAttribute="trailing" id="Wiz-hr-kHc"/>
-                                                <constraint firstAttribute="bottom" secondItem="bhh-o9-8Ri" secondAttribute="bottom" id="aIP-0I-mcK"/>
-                                                <constraint firstItem="bCc-fE-8Iz" firstAttribute="top" secondItem="LRy-tY-jKZ" secondAttribute="bottom" constant="2" id="cLW-yi-TW1"/>
+                                                <constraint firstAttribute="bottom" secondItem="bhh-o9-8Ri" secondAttribute="bottom" constant="4" id="aIP-0I-mcK"/>
+                                                <constraint firstItem="bCc-fE-8Iz" firstAttribute="top" secondItem="LRy-tY-jKZ" secondAttribute="bottom" constant="4" id="cLW-yi-TW1"/>
                                                 <constraint firstItem="LRy-tY-jKZ" firstAttribute="leading" secondItem="Sph-WQ-kXk" secondAttribute="leading" id="g1v-gS-f5U"/>
                                                 <constraint firstItem="bhh-o9-8Ri" firstAttribute="top" secondItem="Sph-WQ-kXk" secondAttribute="top" id="gAf-Fu-VGw"/>
                                                 <constraint firstItem="bCc-fE-8Iz" firstAttribute="leading" secondItem="Sph-WQ-kXk" secondAttribute="leading" id="nlJ-pK-TDC"/>
