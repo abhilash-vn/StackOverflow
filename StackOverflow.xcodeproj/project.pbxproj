@@ -21,7 +21,6 @@
 		A27A8D7C24086BC10056F29F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A27A8D7A24086BC10056F29F /* Main.storyboard */; };
 		A27A8D7E24086BC20056F29F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A27A8D7D24086BC20056F29F /* Assets.xcassets */; };
 		A27A8D8124086BC20056F29F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A27A8D7F24086BC20056F29F /* LaunchScreen.storyboard */; };
-		A27A8D8C24086BC20056F29F /* StackOverflowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A8D8B24086BC20056F29F /* StackOverflowTests.swift */; };
 		A27A8D9724086BC20056F29F /* StackOverflowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A8D9624086BC20056F29F /* StackOverflowUITests.swift */; };
 		A27A8DA524086C530056F29F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A27A8DA424086C530056F29F /* README.md */; };
 		A27A8DA824086F130056F29F /* SOModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A8DA724086F130056F29F /* SOModel.swift */; };
@@ -80,7 +79,6 @@
 		A27A8D8024086BC20056F29F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A27A8D8224086BC20056F29F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A27A8D8724086BC20056F29F /* StackOverflowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackOverflowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A27A8D8B24086BC20056F29F /* StackOverflowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowTests.swift; sourceTree = "<group>"; };
 		A27A8D8D24086BC20056F29F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A27A8D9224086BC20056F29F /* StackOverflowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackOverflowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A27A8D9624086BC20056F29F /* StackOverflowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowUITests.swift; sourceTree = "<group>"; };
@@ -197,8 +195,8 @@
 		A27A8D8A24086BC20056F29F /* StackOverflowTests */ = {
 			isa = PBXGroup;
 			children = (
-				A27A8D8B24086BC20056F29F /* StackOverflowTests.swift */,
 				A2952DC6240C56AF00C15B6E /* SOCoordinatorTests.swift */,
+				A2952DBE240C3A2600C15B6E /* SODataParserTests.swift */,
 				A2952DC5240C565D00C15B6E /* ModelTests */,
 				A2952DC0240C41BA00C15B6E /* ViewTests */,
 				A2952DB9240C2AE800C15B6E /* NetworkTests */,
@@ -270,7 +268,6 @@
 				A2952DB6240C153D00C15B6E /* SODataManagerTests.swift */,
 				A2952DBC240C341400C15B6E /* SOResponseParserTests.swift */,
 				A2952DBA240C2E7000C15B6E /* SOErrorParserTests.swift */,
-				A2952DBE240C3A2600C15B6E /* SODataParserTests.swift */,
 			);
 			path = NetworkTests;
 			sourceTree = "<group>";
@@ -458,7 +455,6 @@
 				A2952DB7240C153D00C15B6E /* SODataManagerTests.swift in Sources */,
 				A2952DB5240C114600C15B6E /* SOUserViewModelTests.swift in Sources */,
 				A2952DBD240C341400C15B6E /* SOResponseParserTests.swift in Sources */,
-				A27A8D8C24086BC20056F29F /* StackOverflowTests.swift in Sources */,
 				A2952DBB240C2E7000C15B6E /* SOErrorParserTests.swift in Sources */,
 				A2952DBF240C3A2600C15B6E /* SODataParserTests.swift in Sources */,
 				A2952DC7240C56AF00C15B6E /* SOCoordinatorTests.swift in Sources */,
