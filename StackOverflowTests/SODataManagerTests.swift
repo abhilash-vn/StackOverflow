@@ -25,10 +25,10 @@ class SOMockNetworkManager: NetworkService {
 
 class SODataManagerTests: XCTestCase {
     
-    func test_DataManager() {
+    func test_DataManagerUserParsing() {
         
         let mockSession = SOMockNetworkSession()
-
+        
         let jsonString = """
         {
           "items": [
@@ -75,9 +75,38 @@ class SODataManagerTests: XCTestCase {
         let sut = SODataManager(networkManager: network)
         
         sut.getData(successBlock: { (users) in
-            print(users)
+            
+            XCTAssertEqual(users.count, 1)
+            XCTAssertEqual(users[0].name, "Mark Byers")
+            
         }) { (error) in
             XCTFail()
+        }
+        
+    }
+    
+    func test_DataManagerErrorParsing() {
+        
+        let mockSession = SOMockNetworkSession()
+        
+        let jsonString = ""
+        let data = jsonString.data(using: .utf8)
+        mockSession.data = data
+        
+        let url = URL(string: "url")!
+        let mockResponse = HTTPURLResponse(url: url, statusCode: 200, httpVersion: "HTTP/1.1", headerFields: nil)!
+        mockSession.response = mockResponse
+        
+        let network = SOMockNetworkManager(session: mockSession)
+        
+        let sut = SODataManager(networkManager: network)
+        
+        var errorRetrieved: SONetworkError?
+        sut.getData(successBlock: { (users) in
+            XCTFail()
+        }) { (error) in
+            errorRetrieved = error as? SONetworkError
+            XCTAssertTrue(errorRetrieved! == .decodingFailed)
         }
         
     }
