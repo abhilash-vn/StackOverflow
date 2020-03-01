@@ -33,8 +33,10 @@ extension SONetworkError {
             
         case .unknownError:
             return "Something went wrong. No idea why!\nDo we have a network connection?"
+        case .networkConnection:
+            return "Seems like we can't connect to the network!\nIs the wifi turned off?"
         case .badURL:
-            return "The application is configured wrong. Someone is getting fired!"
+            return "The application is configured wrong.\nSomeone is getting fired!"
         case .invalidData:
             return "Our server is acting up. Can we try again after some time."
         case .decodingFailed:

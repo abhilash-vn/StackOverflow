@@ -29,6 +29,8 @@ struct SOErrorParser: ErrorParsingService {
         switch error.code {
         case -1002:
             throw SONetworkError.badURL
+        case -1009:
+            throw SONetworkError.networkConnection
         default:
             break
         }

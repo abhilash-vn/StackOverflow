@@ -12,6 +12,7 @@ import Foundation
 enum SONetworkError: Error {
     
     case unknownError
+    case networkConnection
     case badURL
     case invalidData
     case decodingFailed
