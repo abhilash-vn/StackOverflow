@@ -1,5 +1,5 @@
 //
-//  Presenter.swift
+//  SOPresenter.swift
 //  StackOverflow
 //
 //  Created by Viswambharan Nikitha, Abhilash on 29/02/2020.
@@ -11,8 +11,16 @@ import Foundation
 /// The intercation from view, any object that wants to handle user interaction should conform to this.
 protocol UserListViewInteractionProtocol: AnyObject {
     
+    /// Handles follow request on a user model from the view
+    /// - Parameters:
+    ///   - user: The user the follow is requested on
+    ///   - index: The index of the object
     func followActionRequested(on user: SOUserViewData, index: Int)
     
+    /// Handles block request on a user model from the view
+    /// - Parameters:
+    ///   - user: The user the follow is requested on
+    ///   - index: The index of the object
     func blockingActionRequested(on user: SOUserViewData, index: Int)
 }
 
@@ -40,6 +48,8 @@ protocol UserListViewPresenter: AnyObject {
     /// - Parameter view: The view that will be presented to the  user.
     init(view: UserListView)
     
+    /// Updates the view with list of users
+    /// - Parameter users: The array of users
     func updateUsersList(users: [SOUser])
     
     /// Shows an error in the set view

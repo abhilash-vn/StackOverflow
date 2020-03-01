@@ -8,23 +8,6 @@
 
 import UIKit
 
-class TableViewHelper {
-    
-    class func EmptyMessage(message:String, viewController: UITableView) {
-        let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: viewController.bounds.size.width, height: viewController.bounds.size.height))
-        let messageLabel = UILabel(frame: rect)
-        messageLabel.text = message
-        messageLabel.textColor = UIColor.black
-        messageLabel.numberOfLines = 0;
-        messageLabel.textAlignment = .center;
-        messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
-        messageLabel.sizeToFit()
-        
-        viewController.backgroundView = messageLabel;
-        viewController.separatorStyle = .none;
-    }
-}
-
 class SOTableListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -45,6 +28,11 @@ class SOTableListViewController: UIViewController {
         self.showActivity(loading: true)
     }
     
+}
+
+//MARK: - Privates
+private extension SOTableListViewController {
+    
     func showActivity(loading: Bool) {
         
         if activity == nil {
@@ -57,26 +45,34 @@ class SOTableListViewController: UIViewController {
         loading ? activity!.startAnimating() : activity!.stopAnimating()
         
     }
+    
+    
+    private func toggleStateOfCell(cell: SOUserCellTableViewCell) {
+        
+        cell.toggleExpandedState()
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
 }
 
+//MARK: - UserListView Protocol Conformance
 extension SOTableListViewController: UserListView {
     
     func showUserList(users: [SOUserViewData]) {
         
         showActivity(loading: false)
-        
         self.userDatas = users
         self.tableView.reloadData()
-        
     }
     
     func showError(errorMessage: String) {
         showActivity(loading: false)
-        TableViewHelper.EmptyMessage(message: errorMessage, viewController: self.tableView)
+        SOTableViewHelper.showTableError(errorMessage, onTable: self.tableView)
     }
     
 }
 
+//MARK: - TableView DataSource/Delegate Conformance
 extension SOTableListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,7 +90,9 @@ extension SOTableListViewController: UITableViewDataSource, UITableViewDelegate 
             cell.blockAction = { [weak self] user in
                 
                 self?.actionDelegate.blockingActionRequested(on: user, index: indexPath.row)
-                self?.toggleStateOfCell(cell: cell)
+                if user.isBlocked {
+                    self?.toggleStateOfCell(cell: cell)
+                }
             }
             
             cell.followAction = { [weak self] user in
@@ -116,13 +114,6 @@ extension SOTableListViewController: UITableViewDataSource, UITableViewDelegate 
             toggleStateOfCell(cell: cell)
         }
         
-    }
-    
-    private func toggleStateOfCell(cell: SOUserCellTableViewCell) {
-        
-        cell.toggleExpandedState()
-        tableView.beginUpdates()
-        tableView.endUpdates()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -1,5 +1,5 @@
 //
-//  SOPresenter.swift
+//  SOUserListViewPresenter.swift
 //  StackOverflow
 //
 //  Created by Viswambharan Nikitha, Abhilash on 29/02/2020.
@@ -47,18 +47,22 @@ extension SOUserListViewPresenter: UserListViewInteractionProtocol {
 
     func followActionRequested(on user: SOUserViewData, index: Int) {
         
+        // If we had to actually call a request to server, we should pass this to coordinator to act on it,
+        // Coordinator should act on the data
+        // Now we are simply updating the model here for simplicity
+        
         var storedUser = self.users?[index]
         storedUser!.isFollowing = !storedUser!.isFollowing
-        
-        print("followRequested")
     }
     
     func blockingActionRequested(on user: SOUserViewData, index: Int) {
         
+        // If we had to actually call a request to server, we should pass this to coordinator to act on it,
+        // Coordinator should act on the data
+        // Now we are simply updating the model here for simplicity
+        
         var storedUser = self.users?[index]
         storedUser!.isBlocked = !storedUser!.isBlocked
-        
-        print("blockingRequested")
     }
     
 }

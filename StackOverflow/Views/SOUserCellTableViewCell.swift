@@ -60,36 +60,27 @@ class SOUserCellTableViewCell: UITableViewCell {
     }
     
     @IBAction func blockButtonAction(_ sender: Any) {
-        
-        blockAction(userData)
-        greyedOutView.isHidden = false
-       
+        blockUser(true)
     }
     
     @IBAction func unblockButtonAction(_ sender: Any) {
-        
-        blockAction(userData)
-        greyedOutView.isHidden = true
-        
-        
+        blockUser(false)
     }
     
     @IBAction func followButtonAction(_ sender: Any) {
         
         followAction(userData)
         setFollowingState()
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
 }
 
 private extension SOUserCellTableViewCell {
+    
+    func blockUser(_ shouldBlock: Bool) {
+        blockAction(userData)
+        greyedOutView.isHidden = !shouldBlock
+    }
     
     func expandCell() {
         buttonViewZeroHeightConstraint.isActive = false

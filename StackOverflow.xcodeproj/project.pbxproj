@@ -33,6 +33,7 @@
 		A27A8DC124088AC10056F29F /* SODataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A8DC024088AC10056F29F /* SODataParser.swift */; };
 		A2952DAA240BD4A500C15B6E /* SODisplayableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DA9240BD4A500C15B6E /* SODisplayableError.swift */; };
 		A2952DAC240BD50300C15B6E /* SONetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DAB240BD50300C15B6E /* SONetworkError.swift */; };
+		A2952DB1240BE3CE00C15B6E /* SOTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DB0240BE3CE00C15B6E /* SOTableViewHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		A27A8DC024088AC10056F29F /* SODataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SODataParser.swift; sourceTree = "<group>"; };
 		A2952DA9240BD4A500C15B6E /* SODisplayableError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SODisplayableError.swift; sourceTree = "<group>"; };
 		A2952DAB240BD50300C15B6E /* SONetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SONetworkError.swift; sourceTree = "<group>"; };
+		A2952DB0240BE3CE00C15B6E /* SOTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOTableViewHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				A27A8D7824086BC10056F29F /* SOTableListViewController.swift */,
 				A21136C22409D8AB003C8315 /* SOUserCellTableViewCell.swift */,
 				A21136BE2409C050003C8315 /* SOCustomViews.swift */,
+				A2952DB0240BE3CE00C15B6E /* SOTableViewHelper.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				A27A8DBB240884560056F29F /* Extension.swift in Sources */,
 				A2952DAC240BD50300C15B6E /* SONetworkError.swift in Sources */,
 				A27A8DBD2408880F0056F29F /* SOErrorParser.swift in Sources */,
+				A2952DB1240BE3CE00C15B6E /* SOTableViewHelper.swift in Sources */,
 				A276DA5A240AFB3600A24763 /* SOConfiguration.swift in Sources */,
 				A27A8DB7240884180056F29F /* SODataManager.swift in Sources */,
 				A276DA60240B004600A24763 /* SOMainCoordinator.swift in Sources */,
