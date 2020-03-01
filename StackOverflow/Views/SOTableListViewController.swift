@@ -18,6 +18,10 @@ class SOTableListViewController: UIViewController {
     
     let cellIdentifier = "SOTableViewCell"
     
+    convenience init() {
+        self.init()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -46,7 +50,6 @@ private extension SOTableListViewController {
         
     }
     
-    
     private func toggleStateOfCell(cell: SOUserCellTableViewCell) {
         
         cell.toggleExpandedState()
@@ -70,7 +73,8 @@ extension SOTableListViewController: UserListView {
     func showError(errorMessage: String) {
         DispatchQueue.main.async {
             self.showActivity(loading: false)
-            SOTableViewHelper.showTableError(errorMessage, onTable: self.tableView)
+//            SOTableViewHelper.showTableError(errorMessage, onTable: self.tableView)
+            self.tableView.backgroundView = SOTableViewHelper.getTableErrorLabel(errorMessage, onTable: self.tableView)
         }
     }
     

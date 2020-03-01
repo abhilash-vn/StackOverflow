@@ -17,17 +17,17 @@ class SOMainCoordinator: SOCoordinator {
     
     /// Various dependencies for usage and injection.
     private var presenter: UserListViewPresenter!
-    private lazy var networkManager: NetworkService = SONetworkManager()
-    private lazy var dataManager: SODataManager = SODataManager(networkManager: networkManager)
+    private var dataManager: DataService!
     
-    let rootViewController: UIViewController
+    var rootViewController: UIViewController?
     
-    func start() {
+    func start(dataManager: DataService = SODataManager(networkManager: SONetworkManager())) {
         
         guard let view = rootViewController as? UserListView else {
             fatalError("The coordinator is starting with an incompatible root view")
         }
         
+        self.dataManager = dataManager
         presenter = SOUserListViewPresenter(view: view)
         
         dataManager.getData(successBlock: { (users) in
@@ -45,6 +45,11 @@ class SOMainCoordinator: SOCoordinator {
             self.presenter.showError(error: userFriendlyError)
         }
         
+    }
+    
+    func stop() {
+        // Right now we dont have anything
+        rootViewController = nil
     }
     
 }

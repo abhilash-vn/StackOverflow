@@ -11,7 +11,7 @@ import UIKit
 
 class SOTableViewHelper {
     
-    class func showTableError(_ message:String, onTable table: UITableView) {
+    class func getTableErrorLabel(_ message:String, onTable table: UITableView) -> UILabel {
         
         let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: table.bounds.size.width, height: table.bounds.size.height))
         let messageLabel = UILabel(frame: rect)
@@ -23,7 +23,9 @@ class SOTableViewHelper {
         messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
         messageLabel.sizeToFit()
         
-        table.backgroundView = messageLabel
+//        table.backgroundView = messageLabel
         table.separatorStyle = .none
+        
+        return messageLabel
     }
 }

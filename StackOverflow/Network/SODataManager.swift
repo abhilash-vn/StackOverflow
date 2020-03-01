@@ -13,9 +13,7 @@ import Foundation
 /// Conform to this when you want to create a real or mock data service.
 protocol DataService {
     
-    associatedtype Model
-    
-    typealias success = (Model)->()
+    typealias success = ([SOUser])->()
     typealias failure = (Error)->()
     
     init(networkManager: NetworkService)
