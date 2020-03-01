@@ -187,8 +187,7 @@
 			children = (
 				A27A8D8B24086BC20056F29F /* StackOverflowTests.swift */,
 				A2952DB4240C114600C15B6E /* SOUserViewModelTests.swift */,
-				A2952DB2240BED8A00C15B6E /* SONetworkManagerTests.swift */,
-				A2952DB6240C153D00C15B6E /* SODataManagerTests.swift */,
+				A2952DB9240C2AE800C15B6E /* NetworkTests */,
 				A27A8D8D24086BC20056F29F /* Info.plist */,
 			);
 			path = StackOverflowTests;
@@ -248,6 +247,15 @@
 				A276DA63240B009800A24763 /* SOUserListViewPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A2952DB9240C2AE800C15B6E /* NetworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				A2952DB2240BED8A00C15B6E /* SONetworkManagerTests.swift */,
+				A2952DB6240C153D00C15B6E /* SODataManagerTests.swift */,
+			);
+			path = NetworkTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
