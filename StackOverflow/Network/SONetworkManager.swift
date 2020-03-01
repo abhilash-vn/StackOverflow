@@ -29,6 +29,12 @@ protocol NetworkService {
 /// The real network manager for the app. This fetches data from server using URLSession.
 struct SONetworkManager: NetworkService {
     
+    private let session: URLSession
+    
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
+    
     func fetchData(from urlString: String, completion: @escaping completionHandler) {
         
         guard let url = URL(string: urlString) else {
@@ -40,7 +46,7 @@ struct SONetworkManager: NetworkService {
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.httpMethod = "GET"
         
-        URLSession.init(configuration: .default).dataTask(with: urlRequest) { (data, response, error) in
+        session.dataTask(with: urlRequest) { (data, response, error) in
             
             print("\n\n ♻️ Response: \(String(describing: response))")
             print("\n\n 🚫 Error: \(String(describing: error))")

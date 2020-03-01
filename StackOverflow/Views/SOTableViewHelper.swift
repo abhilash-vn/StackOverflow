@@ -11,7 +11,7 @@ import UIKit
 
 class SOTableViewHelper {
     
-    class func showTableError(_ message:String,onTable table: UITableView) {
+    class func showTableError(_ message:String, onTable table: UITableView) {
         
         let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: table.bounds.size.width, height: table.bounds.size.height))
         let messageLabel = UILabel(frame: rect)
