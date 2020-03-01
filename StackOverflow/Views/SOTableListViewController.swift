@@ -8,6 +8,23 @@
 
 import UIKit
 
+class TableViewHelper {
+    
+    class func EmptyMessage(message:String, viewController: UITableView) {
+        let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: viewController.bounds.size.width, height: viewController.bounds.size.height))
+        let messageLabel = UILabel(frame: rect)
+        messageLabel.text = message
+        messageLabel.textColor = UIColor.black
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = .center;
+        messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
+        messageLabel.sizeToFit()
+        
+        viewController.backgroundView = messageLabel;
+        viewController.separatorStyle = .none;
+    }
+}
+
 class SOTableListViewController: UIViewController {
     
     var actionDelegate: UserListViewInteractionProtocol!
@@ -18,6 +35,8 @@ class SOTableListViewController: UIViewController {
     
     let cellIdentifier = "SOTableViewCell"
     
+    private var activity: UIActivityIndicatorView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -25,23 +44,36 @@ class SOTableListViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 140
         
+        self.showActivity(loading: true)
+    }
+    
+    func showActivity(loading: Bool) {
+        
+        if activity == nil {
+            activity = UIActivityIndicatorView(style: .large)
+        }
+        let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: self.tableView.frame.width, height:  self.tableView.frame.height))
+        
+        activity!.frame = rect
+        self.tableView.addSubview(activity!)
+        loading ? activity!.startAnimating() : activity!.stopAnimating()
+        
     }
 }
 
 extension SOTableListViewController: UserListView {
     
-    func showLoading() {
-        print("page is loading")
-    }
-    
     func showUserList(users: [SOUserViewData]) {
+        
+        showActivity(loading: false)
         
         self.userDatas = users
         self.tableView.reloadData()
+        
     }
     
-    func showError(errorTitle: String, errorMessage: String) {
-        print(errorMessage)
+    func showError(errorMessage: String) {
+        TableViewHelper.EmptyMessage(message: "NO DATA", viewController: self.tableView)
     }
     
 }

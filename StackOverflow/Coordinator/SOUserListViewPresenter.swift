@@ -36,7 +36,7 @@ class SOUserListViewPresenter : UserListViewPresenter {
         print("Show Error")
         
         DispatchQueue.main.async {
-            self.view?.showError(errorTitle: "nil", errorMessage: error)
+            self.view?.showError(errorMessage: error)
         }
         
     }

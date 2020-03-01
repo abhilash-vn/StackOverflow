@@ -28,11 +28,9 @@ protocol UserListView: AnyObject {
     
     /// Displays error to user.
     /// - Parameters:
-    ///   - errorTitle: The error title to be presented.
     ///   - errorMessage: The error message to be presented.
-    func showError(errorTitle: String, errorMessage: String)
-    
-    func showLoading()
+    func showError(errorMessage: String)
+
 }
 
 

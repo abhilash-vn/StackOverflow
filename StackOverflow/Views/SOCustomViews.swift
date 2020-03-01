@@ -39,8 +39,8 @@ class SOShadowedUIView: UIView {
 
 protocol CachedImageView {
     
-    func setImageFromUrl(_ imageURL :String)
-    func cacheImage(image: UIImage, for urlString: String)
+    func setImageFromUrl(_ imageURL: String)
+    func cacheImage(_ image: UIImage, for urlString: String)
     
 }
 
@@ -56,28 +56,28 @@ class UIImageViewCached: UIImageView, CachedImageView {
         layer.cornerRadius = 5.0
     }
     
-    func setImageFromUrl(_ imageURL :String) {
+    func setImageFromUrl(_ imageURL: String) {
         
         if let image = UIImageViewCached.cachedImages[imageURL] {
             self.image = image
             return
         }
         
-        URLSession.shared.dataTask( with: NSURL(string:imageURL)! as URL, completionHandler: {
+        URLSession.shared.dataTask(with: NSURL(string:imageURL)! as URL, completionHandler: {
             (data, response, error) -> Void in
             
             print("Fetched Image: \(imageURL)")
             DispatchQueue.main.async {
                 if let data = data, let image = UIImage(data: data) {
                     
-                    self.cacheImage(image: image, for: imageURL)
+                    self.cacheImage(image, for: imageURL)
                     self.image = image
                 }
             }
         }).resume()
     }
     
-    func cacheImage(image: UIImage, for urlString: String) {
+    func cacheImage(_ image: UIImage, for urlString: String) {
         
         UIImageViewCached.cachedImages[urlString] = image
     }
