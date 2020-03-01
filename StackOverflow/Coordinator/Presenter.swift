@@ -16,7 +16,7 @@ protocol UserListViewInteractionProtocol: AnyObject {
     func blockingRequested(on user: SOUserViewData, shouldBlock: Bool)
 }
 
-/// Any object that wants to act as view to show road status needs to conform to this protocol
+/// Any object that wants to act as view to show user list needs to conform to this protocol
 protocol UserListView: AnyObject {
     
     /// Delegate to capture and handle the user interaction inside the view.
@@ -31,6 +31,8 @@ protocol UserListView: AnyObject {
     ///   - errorTitle: The error title to be presented.
     ///   - errorMessage: The error message to be presented.
     func showError(errorTitle: String, errorMessage: String)
+    
+    func showLoading()
 }
 
 
@@ -41,7 +43,7 @@ protocol UserListViewPresenter: AnyObject {
     /// - Parameter view: The view that will be presented to the  user.
     init(view: UserListView)
     
-    func updateUsersList(users: [SOUserViewData])
+    func updateUsersList(users: [SOUser])
     
     /// Shows an error in the set view
     /// - Parameter error: The error object that contains the message and title that will be dispayed.

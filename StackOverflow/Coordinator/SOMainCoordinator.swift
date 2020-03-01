@@ -28,19 +28,11 @@ class SOMainCoordinator: Coordinator {
             fatalError("The coordinator is starting with an incompatible root view")
         }
         
-        view.actionDelegate = self
         presenter = SOUserListViewPresenter(view: view)
         
         dataManager.getData(successBlock: { (users) in
             
-            let userDatas = users.map({ (user) -> SOUserViewModel in
-                SOUserViewModel(user: user)
-            })
-            
-            DispatchQueue.main.async {
-                self.presenter.updateUsersList(users: userDatas)
-            }
-            
+            self.presenter.updateUsersList(users: users)
             
         }) { (error) in
             self.presenter.showError(error: error.localizedDescription)
@@ -50,16 +42,5 @@ class SOMainCoordinator: Coordinator {
     
 }
 
-extension SOMainCoordinator: UserListViewInteractionProtocol {
-    
-    func followRequested(on user: SOUserViewData, shouldFollow: Bool) {
-        print("followRequested")
-    }
-    
-    func blockingRequested(on user: SOUserViewData, shouldBlock: Bool) {
-        print("blockingRequested")
-    }
-
-}
 
 

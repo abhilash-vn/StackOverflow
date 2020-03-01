@@ -18,14 +18,38 @@ class SOUserListViewPresenter : UserListViewPresenter {
         self.view = view
     }
     
-    func updateUsersList(users: [SOUserViewData]) {
-        self.users = users
-        self.view?.showUserList(users: self.users!)
+    func updateUsersList(users: [SOUser]) {
+        
+        let userDatas = users.map({ (user) -> SOUserViewModel in
+            SOUserViewModel(user: user)
+        })
+        
+        self.users = userDatas
+        
+        DispatchQueue.main.async {
+            self.view?.showUserList(users: self.users!)
+        }
     }
     
     func showError(error: String) {
         print("Show Error")
-        self.view?.showError(errorTitle: <#T##String#>, errorMessage: <#T##String#>)
+        
+        DispatchQueue.main.async {
+            self.view?.showError(errorTitle: "nil", errorMessage: error)
+        }
+        
+    }
+    
+}
+
+extension SOUserListViewPresenter: UserListViewInteractionProtocol {
+    
+    func followRequested(on user: SOUserViewData, shouldFollow: Bool) {
+        print("followRequested")
+    }
+    
+    func blockingRequested(on user: SOUserViewData, shouldBlock: Bool) {
+        print("blockingRequested")
     }
     
 }

@@ -8,11 +8,13 @@
 
 import UIKit
 
-typealias blockButtonTappedBlock = () -> Void
+typealias blockButtonTappedCompletion = () -> Void
+typealias followButtonTappedCompletion = () -> Void
 
 class SOUserCellTableViewCell: UITableViewCell {
     
-    var blockCompletion: blockButtonTappedBlock!
+    var blockCompletion: blockButtonTappedCompletion!
+    var followCompletion: blockButtonTappedCompletion!
     
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var reputationLabel: UILabel!
@@ -57,12 +59,15 @@ class SOUserCellTableViewCell: UITableViewCell {
     
     @IBAction func blockButtonAction(_ sender: Any) {
         self.userData.isBlocked = !self.userData.isBlocked
+        
         greyedOutView.isHidden = false
         blockCompletion()
     }
     
     @IBAction func unblockButtonAction(_ sender: Any) {
+        
         self.userData.isBlocked = !self.userData.isBlocked
+    
         greyedOutView.isHidden = true
         
     }

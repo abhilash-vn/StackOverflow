@@ -30,11 +30,14 @@ class SOTableListViewController: UIViewController {
 
 extension SOTableListViewController: UserListView {
     
+    func showLoading() {
+        print("page is loading")
+    }
+    
     func showUserList(users: [SOUserViewData]) {
         
         self.userDatas = users
         self.tableView.reloadData()
-        
     }
     
     func showError(errorTitle: String, errorMessage: String) {
