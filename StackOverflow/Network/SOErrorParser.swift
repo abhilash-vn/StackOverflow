@@ -25,6 +25,10 @@ struct SOErrorParser: ErrorParsingService {
             return
         }
         
+        print("Error : \(error)")
+        print("Code : \(error.code)")
+        print("Description : \(error.localizedDescription)")
+        
         // Look for error codes and return an App specific error
         switch error.code {
         case -1002:
@@ -32,12 +36,7 @@ struct SOErrorParser: ErrorParsingService {
         case -1009:
             throw SONetworkError.networkConnection
         default:
-            break
+            throw SONetworkError.unknownError
         }
-        
-        print("Error : \(error)")
-        print("Code : \(error.code)")
-        print("Description : \(error.localizedDescription)")
-        
     }
 }
