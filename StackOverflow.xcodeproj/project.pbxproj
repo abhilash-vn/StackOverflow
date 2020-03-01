@@ -39,6 +39,7 @@
 		A2952DB7240C153D00C15B6E /* SODataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DB6240C153D00C15B6E /* SODataManagerTests.swift */; };
 		A2952DBB240C2E7000C15B6E /* SOErrorParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DBA240C2E7000C15B6E /* SOErrorParserTests.swift */; };
 		A2952DBD240C341400C15B6E /* SOResponseParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DBC240C341400C15B6E /* SOResponseParserTests.swift */; };
+		A2952DBF240C3A2600C15B6E /* SODataParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DBE240C3A2600C15B6E /* SODataParserTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		A2952DB6240C153D00C15B6E /* SODataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SODataManagerTests.swift; sourceTree = "<group>"; };
 		A2952DBA240C2E7000C15B6E /* SOErrorParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOErrorParserTests.swift; sourceTree = "<group>"; };
 		A2952DBC240C341400C15B6E /* SOResponseParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOResponseParserTests.swift; sourceTree = "<group>"; };
+		A2952DBE240C3A2600C15B6E /* SODataParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SODataParserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +262,7 @@
 				A2952DB6240C153D00C15B6E /* SODataManagerTests.swift */,
 				A2952DBC240C341400C15B6E /* SOResponseParserTests.swift */,
 				A2952DBA240C2E7000C15B6E /* SOErrorParserTests.swift */,
+				A2952DBE240C3A2600C15B6E /* SODataParserTests.swift */,
 			);
 			path = NetworkTests;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				A2952DBD240C341400C15B6E /* SOResponseParserTests.swift in Sources */,
 				A27A8D8C24086BC20056F29F /* StackOverflowTests.swift in Sources */,
 				A2952DBB240C2E7000C15B6E /* SOErrorParserTests.swift in Sources */,
+				A2952DBF240C3A2600C15B6E /* SODataParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
