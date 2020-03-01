@@ -60,10 +60,17 @@ extension SOTableListViewController: UITableViewDataSource, UITableViewDelegate 
         
         if let userData = userDatas?[indexPath.row]  {
             cell.setupWith(user: userData)
-            cell.blockCompletion = { [weak self] in
+            cell.blockAction = { [weak self] user in
                 
+                self?.actionDelegate.blockingActionRequested(on: user, index: indexPath.row)
                 self?.toggleStateOfCell(cell: cell)
             }
+            
+            cell.followAction = { [weak self] user in
+                
+                self?.actionDelegate.followActionRequested(on: user, index: indexPath.row)
+            }
+            
         }
         return cell
     }

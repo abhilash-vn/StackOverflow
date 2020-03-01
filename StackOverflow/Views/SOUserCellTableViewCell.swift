@@ -8,13 +8,13 @@
 
 import UIKit
 
-typealias blockButtonTappedCompletion = () -> Void
-typealias followButtonTappedCompletion = () -> Void
+typealias blockButtonTappedCompletion = (SOUserViewData) -> Void
+typealias followButtonTappedCompletion = (SOUserViewData) -> Void
 
 class SOUserCellTableViewCell: UITableViewCell {
     
-    var blockCompletion: blockButtonTappedCompletion!
-    var followCompletion: blockButtonTappedCompletion!
+    var blockAction: blockButtonTappedCompletion!
+    var followAction: blockButtonTappedCompletion!
     
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var reputationLabel: UILabel!
@@ -44,6 +44,8 @@ class SOUserCellTableViewCell: UITableViewCell {
         profileImageView?.setImageFromUrl(userData.profileImageURL)
         greyedOutView.isHidden = !userData.isBlocked
         
+        userData.isInExpandedState ? expandCell() : collapseCell()
+        
     }
     
     func toggleExpandedState() {
@@ -58,24 +60,25 @@ class SOUserCellTableViewCell: UITableViewCell {
     }
     
     @IBAction func blockButtonAction(_ sender: Any) {
-        self.userData.isBlocked = !self.userData.isBlocked
         
+        blockAction(userData)
         greyedOutView.isHidden = false
-        blockCompletion()
+       
     }
     
     @IBAction func unblockButtonAction(_ sender: Any) {
         
-        self.userData.isBlocked = !self.userData.isBlocked
-    
+        blockAction(userData)
         greyedOutView.isHidden = true
+        
         
     }
     
     @IBAction func followButtonAction(_ sender: Any) {
         
-        self.userData.isFollowing = !(self.userData.isFollowing)
+        followAction(userData)
         setFollowingState()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

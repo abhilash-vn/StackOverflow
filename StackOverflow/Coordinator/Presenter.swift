@@ -11,9 +11,9 @@ import Foundation
 /// The intercation from view, any object that wants to handle user interaction should conform to this.
 protocol UserListViewInteractionProtocol: AnyObject {
     
-    func followRequested(on user: SOUserViewData, shouldFollow: Bool)
+    func followActionRequested(on user: SOUserViewData, index: Int)
     
-    func blockingRequested(on user: SOUserViewData, shouldBlock: Bool)
+    func blockingActionRequested(on user: SOUserViewData, index: Int)
 }
 
 /// Any object that wants to act as view to show user list needs to conform to this protocol

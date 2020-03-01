@@ -16,6 +16,7 @@ class SOUserListViewPresenter : UserListViewPresenter {
     
     required init(view: UserListView) {
         self.view = view
+        view.actionDelegate = self
     }
     
     func updateUsersList(users: [SOUser]) {
@@ -43,12 +44,20 @@ class SOUserListViewPresenter : UserListViewPresenter {
 }
 
 extension SOUserListViewPresenter: UserListViewInteractionProtocol {
-    
-    func followRequested(on user: SOUserViewData, shouldFollow: Bool) {
+
+    func followActionRequested(on user: SOUserViewData, index: Int) {
+        
+        var storedUser = self.users?[index]
+        storedUser!.isFollowing = !storedUser!.isFollowing
+        
         print("followRequested")
     }
     
-    func blockingRequested(on user: SOUserViewData, shouldBlock: Bool) {
+    func blockingActionRequested(on user: SOUserViewData, index: Int) {
+        
+        var storedUser = self.users?[index]
+        storedUser!.isBlocked = !storedUser!.isBlocked
+        
         print("blockingRequested")
     }
     
