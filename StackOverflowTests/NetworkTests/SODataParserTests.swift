@@ -50,7 +50,6 @@ class SODataParserTests: XCTestCase {
             }
     """
     
-    
     let invalidJSONString = """
                {
                  "items": [
@@ -78,7 +77,7 @@ class SODataParserTests: XCTestCase {
        """
     
     func test_DataParsingValidJSONIsSuccess() {
-        
+
         let validData = validJsonString.data(using: .utf8)
 
         do {
