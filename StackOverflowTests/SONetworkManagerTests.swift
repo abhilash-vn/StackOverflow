@@ -1,5 +1,5 @@
 //
-//  SONetworkTests.swift
+//  SONetworkManagerTests.swift
 //  StackOverflowTests
 //
 //  Created by Viswambharan Nikitha, Abhilash on 01/03/2020.
@@ -21,7 +21,7 @@ class SOMockNetworkSession: NetworkSession {
     }
 }
 
-class SONetworkTests: XCTestCase {
+class SONetworkManagerTests: XCTestCase {
     
     // Mock session for network manager
     let mockNetworkSession = SOMockNetworkSession()
