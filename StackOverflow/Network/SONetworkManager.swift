@@ -9,6 +9,16 @@
 
 import Foundation
 
+protocol NetworkSession {
+    func loadData(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
+}
+
+extension URLSession: NetworkSession {
+    func loadData(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        let task = URLSession.init(configuration: .default).dataTask(with: url, completionHandler: completionHandler)
+        task.resume()
+    }
+}
 
 /// Network Service for fethcing data from outside. Conform to this to be used by Data Service.
 /// For example use this to fetch data from remote using URLSession or load data from local json to mock the service.
@@ -25,13 +35,12 @@ protocol NetworkService {
     
 }
 
-
 /// The real network manager for the app. This fetches data from server using URLSession.
 struct SONetworkManager: NetworkService {
     
-    private let session: URLSession
+    private let session: NetworkSession
     
-    init(session: URLSession = .shared) {
+    init(session: NetworkSession = URLSession.shared) {
         self.session = session
     }
     
@@ -46,8 +55,7 @@ struct SONetworkManager: NetworkService {
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.httpMethod = "GET"
         
-        session.dataTask(with: urlRequest) { (data, response, error) in
-            
+        session.loadData(with: url) { (data, response, error) in
             print("\n\n ♻️ Response: \(String(describing: response))")
             print("\n\n 🚫 Error: \(String(describing: error))")
             
@@ -56,9 +64,7 @@ struct SONetworkManager: NetworkService {
             }
             
             completion(data,response,error)
-            
-        }.resume()
-        
+        }
     }
     
 }
