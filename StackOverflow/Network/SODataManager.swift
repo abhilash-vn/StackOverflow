@@ -45,6 +45,11 @@ struct SODataManager: DataService {
             
             do {
                 
+                if let printable = data?.prettyPrintedJSONString {
+                    print("Data: \(printable)")
+                      
+                }
+                
                 try SOErrorParser().parseError(error: error)
                 try SOResponseParser().parseResponse(response: response)
                 let users = try SODataParser().parseData(data: data)

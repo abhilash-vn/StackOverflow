@@ -24,7 +24,7 @@ struct SOUsersModelService: Decodable {
     }
 }
 
-struct SOUserModel: SOUser, Decodable {
+struct SOUserModel: SOUser, Codable {
 
     let profileImageURL: String
     let name: String

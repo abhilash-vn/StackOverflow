@@ -33,7 +33,7 @@ struct SODataParser: DataParsingService {
             return usersServiceData.users
         } catch let error {
             
-            print("Error: \(error)")
+            print("Parsing Error: \(error)")
             throw SONetworkError.decodingFailed
         }
         
