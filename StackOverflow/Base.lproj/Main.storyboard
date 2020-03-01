@@ -108,6 +108,7 @@
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="e63-pq-nJ9"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="126.5" id="gjK-hn-nC5"/>
                                                             </constraints>
                                                             <state key="normal" title="Block"/>
                                                             <connections>
@@ -120,11 +121,11 @@
                                                         <constraint firstAttribute="height" id="0Km-IO-pIC"/>
                                                         <constraint firstItem="0tn-tA-9h0" firstAttribute="leading" secondItem="bCc-fE-8Iz" secondAttribute="leading" constant="30" id="3ye-NT-lTk"/>
                                                         <constraint firstAttribute="trailing" secondItem="e4L-qd-JiL" secondAttribute="trailing" constant="30" id="Jy0-Qb-7fG"/>
+                                                        <constraint firstItem="e4L-qd-JiL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0tn-tA-9h0" secondAttribute="trailing" constant="85" id="PQB-UR-gCO"/>
                                                         <constraint firstItem="e4L-qd-JiL" firstAttribute="width" secondItem="0tn-tA-9h0" secondAttribute="width" id="Vu2-zQ-vqB"/>
                                                         <constraint firstItem="0tn-tA-9h0" firstAttribute="top" secondItem="bCc-fE-8Iz" secondAttribute="top" id="WFo-z9-UQi"/>
                                                         <constraint firstAttribute="height" priority="999" constant="52" id="Yx3-UK-J6O"/>
                                                         <constraint firstItem="e4L-qd-JiL" firstAttribute="top" secondItem="bCc-fE-8Iz" secondAttribute="top" id="sKa-pv-q6g"/>
-                                                        <constraint firstItem="e4L-qd-JiL" firstAttribute="leading" secondItem="0tn-tA-9h0" secondAttribute="trailing" constant="85" id="vZ8-PE-bFW"/>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -140,7 +141,7 @@
                                                             <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="EOR-cb-KQT"/>
-                                                                <constraint firstAttribute="width" constant="100" id="clO-Hg-Thn"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="clO-Hg-Thn"/>
                                                             </constraints>
                                                             <state key="normal" title="UNBLOCK"/>
                                                             <connections>
@@ -150,6 +151,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstItem="7Cn-ue-pxd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bhh-o9-8Ri" secondAttribute="leading" constant="292" id="3gb-Bz-iFr"/>
                                                         <constraint firstItem="7Cn-ue-pxd" firstAttribute="top" secondItem="bhh-o9-8Ri" secondAttribute="top" constant="6" id="qJd-3R-CZr"/>
                                                         <constraint firstAttribute="trailing" secondItem="7Cn-ue-pxd" secondAttribute="trailing" constant="6" id="y6O-uN-3ke"/>
                                                     </constraints>
