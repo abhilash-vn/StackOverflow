@@ -18,6 +18,7 @@ struct SOUsersModelService: Decodable {
     
     let users: [SOUserModel]
     
+   
     enum CodingKeys: String, CodingKey {
         case users = "items"
     }
