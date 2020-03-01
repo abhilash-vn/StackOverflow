@@ -38,6 +38,7 @@
 		A2952DB5240C114600C15B6E /* SOUserViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DB4240C114600C15B6E /* SOUserViewModelTests.swift */; };
 		A2952DB7240C153D00C15B6E /* SODataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DB6240C153D00C15B6E /* SODataManagerTests.swift */; };
 		A2952DBB240C2E7000C15B6E /* SOErrorParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DBA240C2E7000C15B6E /* SOErrorParserTests.swift */; };
+		A2952DBD240C341400C15B6E /* SOResponseParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DBC240C341400C15B6E /* SOResponseParserTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		A2952DB4240C114600C15B6E /* SOUserViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOUserViewModelTests.swift; sourceTree = "<group>"; };
 		A2952DB6240C153D00C15B6E /* SODataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SODataManagerTests.swift; sourceTree = "<group>"; };
 		A2952DBA240C2E7000C15B6E /* SOErrorParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOErrorParserTests.swift; sourceTree = "<group>"; };
+		A2952DBC240C341400C15B6E /* SOResponseParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOResponseParserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,7 @@
 			children = (
 				A2952DB2240BED8A00C15B6E /* SONetworkManagerTests.swift */,
 				A2952DB6240C153D00C15B6E /* SODataManagerTests.swift */,
+				A2952DBC240C341400C15B6E /* SOResponseParserTests.swift */,
 				A2952DBA240C2E7000C15B6E /* SOErrorParserTests.swift */,
 			);
 			path = NetworkTests;
@@ -424,6 +427,7 @@
 				A2952DB3240BED8A00C15B6E /* SONetworkManagerTests.swift in Sources */,
 				A2952DB7240C153D00C15B6E /* SODataManagerTests.swift in Sources */,
 				A2952DB5240C114600C15B6E /* SOUserViewModelTests.swift in Sources */,
+				A2952DBD240C341400C15B6E /* SOResponseParserTests.swift in Sources */,
 				A27A8D8C24086BC20056F29F /* StackOverflowTests.swift in Sources */,
 				A2952DBB240C2E7000C15B6E /* SOErrorParserTests.swift in Sources */,
 			);

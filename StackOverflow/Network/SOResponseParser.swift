@@ -25,6 +25,8 @@ struct SOResponseParser: ResponseParsingService {
             throw SONetworkError.unknownError
         }
         
+        print("Code : \(response.statusCode)")
+        
         switch response.statusCode {
         case 400:
             throw SONetworkError.badURL
