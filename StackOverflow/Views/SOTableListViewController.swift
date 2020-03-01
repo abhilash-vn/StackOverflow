@@ -60,14 +60,18 @@ extension SOTableListViewController: UserListView {
     
     func showUserList(users: [SOUserViewData]) {
         
-        showActivity(loading: false)
         self.userDatas = users
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.showActivity(loading: false)
+            self.tableView.reloadData()
+        }
     }
     
     func showError(errorMessage: String) {
-        showActivity(loading: false)
-        SOTableViewHelper.showTableError(errorMessage, onTable: self.tableView)
+        DispatchQueue.main.async {
+            self.showActivity(loading: false)
+            SOTableViewHelper.showTableError(errorMessage, onTable: self.tableView)
+        }
     }
     
 }

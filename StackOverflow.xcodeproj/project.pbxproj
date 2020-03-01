@@ -41,6 +41,7 @@
 		A2952DBD240C341400C15B6E /* SOResponseParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DBC240C341400C15B6E /* SOResponseParserTests.swift */; };
 		A2952DBF240C3A2600C15B6E /* SODataParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DBE240C3A2600C15B6E /* SODataParserTests.swift */; };
 		A2952DC2240C41D700C15B6E /* SODisplayableErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DC1240C41D700C15B6E /* SODisplayableErrorTests.swift */; };
+		A2952DC4240C447C00C15B6E /* SOUserListViewPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2952DC3240C447C00C15B6E /* SOUserListViewPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		A2952DBC240C341400C15B6E /* SOResponseParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOResponseParserTests.swift; sourceTree = "<group>"; };
 		A2952DBE240C3A2600C15B6E /* SODataParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SODataParserTests.swift; sourceTree = "<group>"; };
 		A2952DC1240C41D700C15B6E /* SODisplayableErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SODisplayableErrorTests.swift; sourceTree = "<group>"; };
+		A2952DC3240C447C00C15B6E /* SOUserListViewPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOUserListViewPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				A2952DC1240C41D700C15B6E /* SODisplayableErrorTests.swift */,
+				A2952DC3240C447C00C15B6E /* SOUserListViewPresenterTests.swift */,
 			);
 			path = ViewTests;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 			files = (
 				A2952DB3240BED8A00C15B6E /* SONetworkManagerTests.swift in Sources */,
 				A2952DC2240C41D700C15B6E /* SODisplayableErrorTests.swift in Sources */,
+				A2952DC4240C447C00C15B6E /* SOUserListViewPresenterTests.swift in Sources */,
 				A2952DB7240C153D00C15B6E /* SODataManagerTests.swift in Sources */,
 				A2952DB5240C114600C15B6E /* SOUserViewModelTests.swift in Sources */,
 				A2952DBD240C341400C15B6E /* SOResponseParserTests.swift in Sources */,
