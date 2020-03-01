@@ -33,7 +33,6 @@ protocol UserListView: AnyObject {
 
 }
 
-
 /// Any object that wants to act as view presenter should conform to this protocol.
 protocol UserListViewPresenter: AnyObject {
     
@@ -44,8 +43,8 @@ protocol UserListViewPresenter: AnyObject {
     func updateUsersList(users: [SOUser])
     
     /// Shows an error in the set view
-    /// - Parameter error: The error object that contains the message and title that will be dispayed.
-    func showError( error: String)
+    /// - Parameter error: The error object that contains the message that will be dispayed.
+    func showError( error: DisplayableError)
 }
 
 

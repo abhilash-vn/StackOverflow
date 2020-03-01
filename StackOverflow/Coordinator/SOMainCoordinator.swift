@@ -35,7 +35,14 @@ class SOMainCoordinator: Coordinator {
             self.presenter.updateUsersList(users: users)
             
         }) { (error) in
-            self.presenter.showError(error: error.localizedDescription)
+            
+            var userFriendlyError = SODisplayableError(message: "Something went wrong! Please try after sometime")
+            
+            if let networkError = error as? SONetworkError {
+                userFriendlyError = SODisplayableError(error: networkError)
+            }
+            
+            self.presenter.showError(error: userFriendlyError)
         }
         
     }

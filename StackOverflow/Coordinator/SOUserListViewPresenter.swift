@@ -32,11 +32,11 @@ class SOUserListViewPresenter : UserListViewPresenter {
         }
     }
     
-    func showError(error: String) {
+    func showError(error: DisplayableError) {
         print("Show Error")
         
         DispatchQueue.main.async {
-            self.view?.showError(errorMessage: error)
+            self.view?.showError(errorMessage: error.message)
         }
         
     }

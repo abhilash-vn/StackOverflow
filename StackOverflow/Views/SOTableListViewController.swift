@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SOTableListViewController.swift
 //  StackOverflow
 //
 //  Created by Viswambharan Nikitha, Abhilash on 27/02/2020.
@@ -27,15 +27,13 @@ class TableViewHelper {
 
 class SOTableListViewController: UIViewController {
     
-    var actionDelegate: UserListViewInteractionProtocol!
-    
     @IBOutlet weak var tableView: UITableView!
+    private var activity: UIActivityIndicatorView?
     
+    var actionDelegate: UserListViewInteractionProtocol!
     var userDatas: [SOUserViewData]? = nil
     
     let cellIdentifier = "SOTableViewCell"
-    
-    private var activity: UIActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +71,8 @@ extension SOTableListViewController: UserListView {
     }
     
     func showError(errorMessage: String) {
-        TableViewHelper.EmptyMessage(message: "NO DATA", viewController: self.tableView)
+        showActivity(loading: false)
+        TableViewHelper.EmptyMessage(message: errorMessage, viewController: self.tableView)
     }
     
 }

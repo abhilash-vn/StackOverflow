@@ -8,19 +8,6 @@
 
 import Foundation
 
-/// The network error object
-enum SONetworkError: Error {
-    
-    case emptyRoadName
-    case unknownError
-    case unrecognisedRoad
-    case badURL
-    case invalidData
-    case invalidCredentials
-    case decodingFailed
-    
-}
-
 /// Any object that wants to parse error should conform to this.
 protocol ErrorParsingService {
     

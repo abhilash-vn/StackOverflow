@@ -26,10 +26,8 @@ struct SOResponseParser: ResponseParsingService {
         }
         
         switch response.statusCode {
-        case 404:
-            throw SONetworkError.unrecognisedRoad
-        case 429:
-            throw SONetworkError.invalidCredentials
+        case 400:
+            throw SONetworkError.badURL
         default:
             break
         }
