@@ -1,5 +1,5 @@
 //
-//  Coordinator.swift
+//  SOCoordinator.swift
 //  StackOverflow
 //
 //  Created by Viswambharan Nikitha, Abhilash on 29/02/2020.
@@ -11,7 +11,7 @@ import UIKit
 
 
 /// Coordinator protocol, any main or child coordinator should conform to this
-protocol Coordinator: AnyObject {
+protocol SOCoordinator: AnyObject {
     
     /// Start the coordinator, ideally present view and inject dependencies
     func start()
@@ -25,7 +25,7 @@ protocol Coordinator: AnyObject {
 }
 
 // Making the stop function optional
-extension Coordinator {
+extension SOCoordinator {
     
     func stop() {}
 }

@@ -28,19 +28,7 @@ class SOUserViewModel: SOUserViewData {
     var isFollowing: Bool = false
     var isBlocked: Bool = false
     var isInExpandedState: Bool = false
-    
-    func setFollowing(following: Bool) {
-        isFollowing = following
-    }
-    
-    func setBlocked(blocked: Bool) {
-        isBlocked = blocked
-    }
-    
-    func setisInExpandedState(state: Bool) {
-        isInExpandedState = state
-    }
-    
+        
     init(user: SOUser) {
         profileImageURL = user.profileImageURL
         name = user.name

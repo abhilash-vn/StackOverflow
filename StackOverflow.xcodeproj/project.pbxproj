@@ -11,9 +11,9 @@
 		A21136C32409D8AB003C8315 /* SOUserCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21136C22409D8AB003C8315 /* SOUserCellTableViewCell.swift */; };
 		A21136C5240A8259003C8315 /* SOUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21136C4240A8259003C8315 /* SOUserViewModel.swift */; };
 		A276DA5A240AFB3600A24763 /* SOConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276DA59240AFB3600A24763 /* SOConfiguration.swift */; };
-		A276DA5F240B004600A24763 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276DA5D240B004500A24763 /* Coordinator.swift */; };
+		A276DA5F240B004600A24763 /* SOCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276DA5D240B004500A24763 /* SOCoordinator.swift */; };
 		A276DA60240B004600A24763 /* SOMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276DA5E240B004500A24763 /* SOMainCoordinator.swift */; };
-		A276DA64240B009800A24763 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276DA62240B009800A24763 /* Presenter.swift */; };
+		A276DA64240B009800A24763 /* SOPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276DA62240B009800A24763 /* SOPresenter.swift */; };
 		A276DA65240B009800A24763 /* SOUserListViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A276DA63240B009800A24763 /* SOUserListViewPresenter.swift */; };
 		A27A8D7524086BC10056F29F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A8D7424086BC10056F29F /* AppDelegate.swift */; };
 		A27A8D7724086BC10056F29F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A8D7624086BC10056F29F /* SceneDelegate.swift */; };
@@ -57,9 +57,9 @@
 		A21136C22409D8AB003C8315 /* SOUserCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOUserCellTableViewCell.swift; sourceTree = "<group>"; };
 		A21136C4240A8259003C8315 /* SOUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOUserViewModel.swift; sourceTree = "<group>"; };
 		A276DA59240AFB3600A24763 /* SOConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOConfiguration.swift; sourceTree = "<group>"; };
-		A276DA5D240B004500A24763 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A276DA5D240B004500A24763 /* SOCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOCoordinator.swift; sourceTree = "<group>"; };
 		A276DA5E240B004500A24763 /* SOMainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOMainCoordinator.swift; sourceTree = "<group>"; };
-		A276DA62240B009800A24763 /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		A276DA62240B009800A24763 /* SOPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOPresenter.swift; sourceTree = "<group>"; };
 		A276DA63240B009800A24763 /* SOUserListViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOUserListViewPresenter.swift; sourceTree = "<group>"; };
 		A27A8D7124086BC10056F29F /* StackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A27A8D7424086BC10056F29F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,10 +126,8 @@
 		A276DA61240B004D00A24763 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				A276DA5D240B004500A24763 /* Coordinator.swift */,
+				A276DA5D240B004500A24763 /* SOCoordinator.swift */,
 				A276DA5E240B004500A24763 /* SOMainCoordinator.swift */,
-				A276DA62240B009800A24763 /* Presenter.swift */,
-				A276DA63240B009800A24763 /* SOUserListViewPresenter.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -160,12 +158,13 @@
 			children = (
 				A27A8D7424086BC10056F29F /* AppDelegate.swift */,
 				A27A8D7624086BC10056F29F /* SceneDelegate.swift */,
-				A27A8DBA240884560056F29F /* Extension.swift */,
-				A276DA59240AFB3600A24763 /* SOConfiguration.swift */,
+				A2952DAD240BE07500C15B6E /* Extension */,
+				A2952DAE240BE08300C15B6E /* Configuration */,
 				A276DA61240B004D00A24763 /* Coordinator */,
-				A27A8DB5240883F00056F29F /* Network */,
 				A27A8DA624086EF50056F29F /* Model */,
+				A2952DAF240BE09A00C15B6E /* Presenter */,
 				A276DA58240AE67B00A24763 /* Views */,
+				A27A8DB5240883F00056F29F /* Network */,
 				A27A8D7A24086BC10056F29F /* Main.storyboard */,
 				A27A8D7D24086BC20056F29F /* Assets.xcassets */,
 				A27A8D7F24086BC20056F29F /* LaunchScreen.storyboard */,
@@ -212,6 +211,31 @@
 				A2952DAB240BD50300C15B6E /* SONetworkError.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		A2952DAD240BE07500C15B6E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A27A8DBA240884560056F29F /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A2952DAE240BE08300C15B6E /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				A276DA59240AFB3600A24763 /* SOConfiguration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		A2952DAF240BE09A00C15B6E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A276DA62240B009800A24763 /* SOPresenter.swift */,
+				A276DA63240B009800A24763 /* SOUserListViewPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,8 +373,8 @@
 				A21136C32409D8AB003C8315 /* SOUserCellTableViewCell.swift in Sources */,
 				A2952DAA240BD4A500C15B6E /* SODisplayableError.swift in Sources */,
 				A27A8DC124088AC10056F29F /* SODataParser.swift in Sources */,
-				A276DA5F240B004600A24763 /* Coordinator.swift in Sources */,
-				A276DA64240B009800A24763 /* Presenter.swift in Sources */,
+				A276DA5F240B004600A24763 /* SOCoordinator.swift in Sources */,
+				A276DA64240B009800A24763 /* SOPresenter.swift in Sources */,
 				A27A8DB92408841F0056F29F /* SONetworkManager.swift in Sources */,
 				A27A8D7924086BC10056F29F /* SOTableListViewController.swift in Sources */,
 				A276DA65240B009800A24763 /* SOUserListViewPresenter.swift in Sources */,
