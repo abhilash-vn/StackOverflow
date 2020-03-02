@@ -57,10 +57,6 @@ struct SONetworkManager: NetworkService {
             return
         }
         
-        var urlRequest = URLRequest(url: url)
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.httpMethod = "GET"
-        
         session.loadData(with: url) { (data, response, error) in
             print("\n♻️ Response: \(String(describing: response))")
             print("\n🚫 Error: \(String(describing: error))")
