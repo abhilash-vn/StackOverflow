@@ -23,7 +23,6 @@ class SOTableViewHelper {
         messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
         messageLabel.sizeToFit()
         
-//        table.backgroundView = messageLabel
         table.separatorStyle = .none
         
         return messageLabel

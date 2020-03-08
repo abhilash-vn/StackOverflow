@@ -73,7 +73,6 @@ extension SOTableListViewController: UserListView {
     func showError(errorMessage: String) {
         DispatchQueue.main.async {
             self.showActivity(loading: false)
-//            SOTableViewHelper.showTableError(errorMessage, onTable: self.tableView)
             self.tableView.backgroundView = SOTableViewHelper.getTableErrorLabel(errorMessage, onTable: self.tableView)
         }
     }
